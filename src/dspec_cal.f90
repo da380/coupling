@@ -127,6 +127,8 @@ program dspec_cal
   read(io1) a1
   read(io1) a2
   close(io1)
+  print *, a0(1:5,1:5)
+  print *, "hello"
 
   
   ! open the mode catalog

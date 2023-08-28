@@ -1,0 +1,1 @@
+/opt/gcc-13.1.0/bin/g++ CMakeFiles/matrix_read.dir/matrix_read.cpp.o -o ../bin/matrix_read 

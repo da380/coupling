@@ -265,7 +265,8 @@ program mdcpl
   write(35) a1(1:nelem,1:nelem)
   write(35) a2(1:nelem,1:nelem)
   close(35)
-
+  print *, a0(1:5,1:5)
+ 
 !   open(35,file='matrixPd.dat',form='formatted')
 !   write(35,*) nelem
 !   do i = 1,nelem
