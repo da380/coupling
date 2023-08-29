@@ -14,9 +14,14 @@ using std::cout;
 using std::endl;
 using std::ifstream;
 using std::ios;
+using namespace std::chrono;
 
 int
 main() {
+     //////////////////////////////////////////////////////////////////////////
+     ///////////////      file opening and initialisation       ///////////////
+     //////////////////////////////////////////////////////////////////////////
+
      ifstream infile("./matrix.bin", ifstream::binary);
 
      // check opened correctly
@@ -35,43 +40,50 @@ main() {
      const int nelem = sqrt((file_size - 24) / (3 * 16));
      cout << nelem << endl;
 
-     int i;
-     infile.read(reinterpret_cast<char *>(&i), sizeof(i));
-     // double mytest, mytest2;
-     std::complex<double> mycomplex;
-     int smytest;
-     // smytest = sizeof(mytest);
-     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>
-         mytestmat;
-     mytestmat.resize(nelem, nelem);
-     cout << "Hello" << endl;
-     for (int m = 0; m < nelem; ++m) {
-          for (int n = 0; n < nelem; ++n) {
-               infile.read(reinterpret_cast<char *>(&mycomplex),
-                           sizeof(mycomplex));
-               mytestmat(m, n) = mycomplex;
-          }
-     }
-     // infile.read(reinterpret_cast<char *>(mytestmat.begin()),
-     //             nelem * nelem * sizeof(mycomplex));
-     cout << "Hello" << endl;
-     cout << mytestmat(0, 0) << endl;
-     cout << mytestmat(0, 1) << endl;
+     //////////////////////////////////////////////////////////////////////////
+     ///////////////     reading in data into a0, a1 and a2     ///////////////
+     //////////////////////////////////////////////////////////////////////////
+     // placeholder byte size 4, ie same as integer
+     int i, matbytes;
+     infile.read(reinterpret_cast<char *>(&i), sizeof(i));   // head placeholder
+     double matbreak;   // placeholder between matrices
 
-     //  std::vector<double>
-     //  double mytest2;
-     // infile.read(reinterpret_cast<char *>(&mytestmat),
-     //             sizeof(mytest) * nelem * nelem * 2);
-     //  cout << "Mytest is: " << mytest << endl;
-     //  cout << "Mytest2 is: " << mytest2 << endl;
-     //  infile.read(reinterpret_cast<char *>(&mytest), sizeof(mytest));
-     //  infile.read(reinterpret_cast<char *>(&mytest2), sizeof(mytest2));
-     //  cout << "Mytest is: " << mytest << endl;
-     //  cout << "Mytest2 is: " << mytest2 << endl;
+     // reading into Eigen Matrix complex double. Need to have dynamic at start
+     // as only find size at compile time
+     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic> a0, a1,
+         a2;
 
-     // close and check closed
+     // resizing matrices using size found
+     a0.resize(nelem, nelem);
+     a1.resize(nelem, nelem);
+     a2.resize(nelem, nelem);
+
+     // size of matrices in bytes
+     matbytes = nelem * nelem * 16;
+
+     // read matrices
+     infile.read(reinterpret_cast<char *>(a0.data()), matbytes);
+     infile.read(reinterpret_cast<char *>(&matbreak), 8);   // placeholder
+     infile.read(reinterpret_cast<char *>(a1.data()), matbytes);
+     infile.read(reinterpret_cast<char *>(&matbreak), 8);   // placeholder
+     infile.read(reinterpret_cast<char *>(a2.data()), matbytes);
+
+     //////////////////////////////////////////////////////////////////////////
+     ///////////////                   checks                 ///////////////
+     //////////////////////////////////////////////////////////////////////////
+     // cout << a0(0, 0) << endl;
+     // cout << a0(1, 0) << endl;
+     // cout << a1(0, 0) << endl;
+     // cout << a1(nelem - 1, nelem - 1) << endl;
+     // cout << a2(0, 0) << endl;
+     // cout << a2(1, 0) << endl;
+
+     //////////////////////////////////////////////////////////////////////////
+     ///////////////   closing and checking closed correctly    ///////////////
+     //////////////////////////////////////////////////////////////////////////
+     // close
      infile.close();
-     // std::cout << "Hello 3" << std::endl;
+     // check
      if (!infile.good()) {
           cout << "Error occurred at reading time!" << endl;
           return 1;
