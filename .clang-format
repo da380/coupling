@@ -1,6 +1,6 @@
 # options: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 BasedOnStyle: google
-IndentWidth: 5
+IndentWidth: 4
 # Must be 80 characters or less!
 ColumnLimit: 80
 # does (int) x instead of (int)x

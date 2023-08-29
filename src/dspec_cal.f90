@@ -185,6 +185,18 @@ program dspec_cal
   end do
   ! end loop over the modes
 
+! outputting vectors
+  open(25, file = "vector_sr.bin", form = "unformatted")
+  write(25) vs
+  write(25) vr
+  close(25)
+!   open(25, file = "vector_sr.out", status = "replace", form = "formatted")
+!   write(25) vs
+!   write(25) vr
+!   close(25)
+!   print *, vs(1:2)
+!   print *, vr(1:2,1)
+
 
   f1 = (i1-1)*df
   f2 = (i2-1)*df
