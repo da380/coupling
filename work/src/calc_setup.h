@@ -64,6 +64,7 @@ freq_setup::freq_setup(double f1, double f2, double dt, double tout, double df0,
 
     i2 = static_cast<int>(std::floor(f2 / df)) + 2;
     f2 = (i2 - 1) * df;
+    std::cout << f1 << " " << f2 << std::endl;
 };
 
 double
@@ -82,6 +83,7 @@ freq_setup::operator()(double x) {
 std::complex<double>
 freq_setup::freq_value(int n) {
     using namespace std::complex_literals;
+    std::cout << i1 << std::endl;
     if (n > i2) {
         std::cout << "n is too large\n" << std::endl;
     };
