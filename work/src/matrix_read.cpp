@@ -38,5 +38,5 @@ main() {
     mytest(5);
 
     // test spectra
-    testclass.fspectra(mytest.freq_value(1));
+    // testclass.fspectra(mytest.freq_value(1));
 }

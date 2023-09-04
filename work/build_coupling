@@ -2,17 +2,17 @@
 
 # set the minimum and maximum frequencies for the modes
 fmin=0.1
-fmax=2.0
+fmax=1.5
 
 # set the range of structural degrees
 smin=0
 smax=20
 
 # rotation on == 1, off == 0
-rot=1
+rot=0
 
 # ellipticity on == 1, off = 0
-ell=1
+ell=0
 
 # set the name for the matrix file
 file="matrix.bin"

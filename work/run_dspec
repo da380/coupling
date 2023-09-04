@@ -33,10 +33,10 @@ reciever="dspec.rec"
 matrix="matrix.bin"
 
 # prefix for time series files
-timeprefix="time_small"
+timeprefix="time_norot"
 
 # prefix for spectra files
-spectraprefix="spectra_small"
+spectraprefix="spectra_norot"
 
 
 ../bin/dspec_pre << !
