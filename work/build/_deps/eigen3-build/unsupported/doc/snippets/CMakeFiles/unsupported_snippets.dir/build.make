@@ -53,10 +53,10 @@ RM = /opt/cmake-3.26.4/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/adcm2/Documents/coupling_codes/coupling/work
+CMAKE_SOURCE_DIR = /home/adcm2/raidam/coupling/work
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/adcm2/Documents/coupling_codes/coupling/work/build
+CMAKE_BINARY_DIR = /home/adcm2/raidam/coupling/work/build
 
 # Utility rule file for unsupported_snippets.
 
@@ -74,10 +74,10 @@ _deps/eigen3-build/unsupported/doc/snippets/CMakeFiles/unsupported_snippets.dir/
 .PHONY : _deps/eigen3-build/unsupported/doc/snippets/CMakeFiles/unsupported_snippets.dir/build
 
 _deps/eigen3-build/unsupported/doc/snippets/CMakeFiles/unsupported_snippets.dir/clean:
-	cd /home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-build/unsupported/doc/snippets && $(CMAKE_COMMAND) -P CMakeFiles/unsupported_snippets.dir/cmake_clean.cmake
+	cd /home/adcm2/raidam/coupling/work/build/_deps/eigen3-build/unsupported/doc/snippets && $(CMAKE_COMMAND) -P CMakeFiles/unsupported_snippets.dir/cmake_clean.cmake
 .PHONY : _deps/eigen3-build/unsupported/doc/snippets/CMakeFiles/unsupported_snippets.dir/clean
 
 _deps/eigen3-build/unsupported/doc/snippets/CMakeFiles/unsupported_snippets.dir/depend:
-	cd /home/adcm2/Documents/coupling_codes/coupling/work/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adcm2/Documents/coupling_codes/coupling/work /home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src/unsupported/doc/snippets /home/adcm2/Documents/coupling_codes/coupling/work/build /home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-build/unsupported/doc/snippets /home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-build/unsupported/doc/snippets/CMakeFiles/unsupported_snippets.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/adcm2/raidam/coupling/work/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/adcm2/raidam/coupling/work /home/adcm2/raidam/coupling/work/build/_deps/eigen3-src/unsupported/doc/snippets /home/adcm2/raidam/coupling/work/build /home/adcm2/raidam/coupling/work/build/_deps/eigen3-build/unsupported/doc/snippets /home/adcm2/raidam/coupling/work/build/_deps/eigen3-build/unsupported/doc/snippets/CMakeFiles/unsupported_snippets.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : _deps/eigen3-build/unsupported/doc/snippets/CMakeFiles/unsupported_snippets.dir/depend
 

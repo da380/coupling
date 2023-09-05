@@ -1,5 +1,5 @@
 src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
- /home/adcm2/Documents/coupling_codes/coupling/work/src/matrix_read.cpp \
+ /home/adcm2/raidam/coupling/work/src/matrix_read.cpp \
  /usr/include/stdc-predef.h /opt/gcc-13.1.0/include/c++/13.1.0/math.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/cmath \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/requires_hosted.h \
@@ -16,9 +16,7 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /opt/gcc-13.1.0/include/c++/13.1.0/ext/type_traits.h /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
- /usr/include/x86_64-linux-gnu/bits/time64.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include-fixed/x86_64-linux-gnu/bits/floatn.h \
@@ -28,7 +26,6 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/std_abs.h /usr/include/stdlib.h \
  /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/stddef.h \
@@ -43,8 +40,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endianness.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
@@ -52,12 +49,12 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
- /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
- /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/specfun.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_algobase.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/functexcept.h \
@@ -96,9 +93,17 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /opt/gcc-13.1.0/include/c++/13.1.0/tr1/poly_hermite.tcc \
  /opt/gcc-13.1.0/include/c++/13.1.0/tr1/poly_laguerre.tcc \
  /opt/gcc-13.1.0/include/c++/13.1.0/tr1/riemann_zeta.tcc \
- /usr/include/eigen3/Eigen/Core \
- /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
- /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/Core \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/DisableStupidWarnings.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/Macros.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/ConfigureVectorization.h \
+ /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/mmintrin.h \
+ /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/emmintrin.h \
+ /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/xmmintrin.h \
+ /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/mm_malloc.h \
+ /opt/gcc-13.1.0/include/c++/13.1.0/stdlib.h \
+ /opt/gcc-13.1.0/include/c++/13.1.0/cstdlib \
  /opt/gcc-13.1.0/include/c++/13.1.0/complex \
  /opt/gcc-13.1.0/include/c++/13.1.0/sstream \
  /opt/gcc-13.1.0/include/c++/13.1.0/istream \
@@ -133,7 +138,6 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /opt/gcc-13.1.0/include/c++/13.1.0/x86_64-pc-linux-gnu/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
@@ -164,19 +168,15 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /opt/gcc-13.1.0/include/c++/13.1.0/numbers \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/string_view.tcc \
  /opt/gcc-13.1.0/include/c++/13.1.0/ext/string_conversions.h \
- /opt/gcc-13.1.0/include/c++/13.1.0/cstdlib \
  /opt/gcc-13.1.0/include/c++/13.1.0/cstdio /usr/include/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+ /usr/include/x86_64-linux-gnu/bits/libio.h \
+ /usr/include/x86_64-linux-gnu/bits/_G_config.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/cerrno /usr/include/errno.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/charconv.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/basic_string.tcc \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/memory_resource.h \
@@ -204,13 +204,7 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/ostream.tcc \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/istream.tcc \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/sstream.tcc \
- /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h \
- /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/mmintrin.h \
- /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/emmintrin.h \
- /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/xmmintrin.h \
- /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/mm_malloc.h \
- /opt/gcc-13.1.0/include/c++/13.1.0/stdlib.h \
- /opt/gcc-13.1.0/include/c++/13.1.0/cassert /usr/include/assert.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/MKL_support.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/functional \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/std_function.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/unordered_map \
@@ -247,168 +241,198 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/ranges_algobase.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/pstl/glue_algorithm_defs.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/pstl/execution_defs.h \
- /usr/include/eigen3/Eigen/src/Core/util/Constants.h \
- /usr/include/eigen3/Eigen/src/Core/util/Meta.h \
- /usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
- /usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h \
- /usr/include/eigen3/Eigen/src/Core/util/XprHelper.h \
- /usr/include/eigen3/Eigen/src/Core/util/Memory.h \
- /usr/include/eigen3/Eigen/src/Core/NumTraits.h \
- /usr/include/eigen3/Eigen/src/Core/MathFunctions.h \
- /usr/include/eigen3/Eigen/src/Core/GenericPacketMath.h \
- /usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h \
- /usr/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h \
- /usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h \
- /usr/include/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h \
- /usr/include/eigen3/Eigen/src/Core/arch/SSE/Complex.h \
- /usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h \
- /usr/include/eigen3/Eigen/src/Core/arch/CUDA/Half.h \
- /usr/include/eigen3/Eigen/src/Core/arch/CUDA/PacketMathHalf.h \
- /usr/include/eigen3/Eigen/src/Core/arch/CUDA/TypeCasting.h \
- /usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h \
- /usr/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/functors/StlFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/arch/CUDA/Complex.h \
- /usr/include/eigen3/Eigen/src/Core/IO.h \
- /usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h \
- /usr/include/eigen3/Eigen/src/Core/DenseBase.h \
- /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
- /usr/include/eigen3/Eigen/src/Core/MatrixBase.h \
- /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
- /usr/include/eigen3/Eigen/src/Core/EigenBase.h \
- /usr/include/eigen3/Eigen/src/Core/Product.h \
- /usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h \
- /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h \
- /usr/include/eigen3/Eigen/src/Core/Assign.h \
- /usr/include/eigen3/Eigen/src/Core/ArrayBase.h \
- /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
- /usr/include/eigen3/Eigen/src/Core/util/BlasUtil.h \
- /usr/include/eigen3/Eigen/src/Core/DenseStorage.h \
- /usr/include/eigen3/Eigen/src/Core/NestByValue.h \
- /usr/include/eigen3/Eigen/src/Core/ReturnByValue.h \
- /usr/include/eigen3/Eigen/src/Core/NoAlias.h \
- /usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h \
- /usr/include/eigen3/Eigen/src/Core/Matrix.h \
- /usr/include/eigen3/Eigen/src/Core/Array.h \
- /usr/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h \
- /usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h \
- /usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h \
- /usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h \
- /usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h \
- /usr/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h \
- /usr/include/eigen3/Eigen/src/Core/Dot.h \
- /usr/include/eigen3/Eigen/src/Core/StableNorm.h \
- /usr/include/eigen3/Eigen/src/Core/Stride.h \
- /usr/include/eigen3/Eigen/src/Core/MapBase.h \
- /usr/include/eigen3/Eigen/src/Core/Map.h \
- /usr/include/eigen3/Eigen/src/Core/Ref.h \
- /usr/include/eigen3/Eigen/src/Core/Block.h \
- /usr/include/eigen3/Eigen/src/Core/VectorBlock.h \
- /usr/include/eigen3/Eigen/src/Core/Transpose.h \
- /usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/Diagonal.h \
- /usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h \
- /usr/include/eigen3/Eigen/src/Core/Redux.h \
- /usr/include/eigen3/Eigen/src/Core/Visitor.h \
- /usr/include/eigen3/Eigen/src/Core/Fuzzy.h \
- /usr/include/eigen3/Eigen/src/Core/Swap.h \
- /usr/include/eigen3/Eigen/src/Core/CommaInitializer.h \
- /usr/include/eigen3/Eigen/src/Core/GeneralProduct.h \
- /usr/include/eigen3/Eigen/src/Core/Solve.h \
- /usr/include/eigen3/Eigen/src/Core/Inverse.h \
- /usr/include/eigen3/Eigen/src/Core/SolverBase.h \
- /usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/Transpositions.h \
- /usr/include/eigen3/Eigen/src/Core/TriangularMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/SelfAdjointView.h \
- /usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
- /usr/include/eigen3/Eigen/src/Core/products/Parallelizer.h \
- /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h \
- /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
- /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/SolveTriangular.h \
- /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
- /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h \
- /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h \
- /usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h \
- /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h \
- /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h \
- /usr/include/eigen3/Eigen/src/Core/BandMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/CoreIterators.h \
- /usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h \
- /usr/include/eigen3/Eigen/src/Core/BooleanRedux.h \
- /usr/include/eigen3/Eigen/src/Core/Select.h \
- /usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h \
- /usr/include/eigen3/Eigen/src/Core/Random.h \
- /usr/include/eigen3/Eigen/src/Core/Replicate.h \
- /usr/include/eigen3/Eigen/src/Core/Reverse.h \
- /usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h \
- /usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
- /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
- /usr/include/eigen3/Eigen/IterativeLinearSolvers \
- /usr/include/eigen3/Eigen/SparseCore /usr/include/eigen3/Eigen/Core \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/Constants.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/Meta.h \
+ /opt/gcc-13.1.0/include/c++/13.1.0/cstdint \
+ /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/stdint.h \
+ /usr/include/stdint.h /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/Assert.h \
+ /opt/gcc-13.1.0/include/c++/13.1.0/cassert /usr/include/assert.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/ForwardDeclarations.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/StaticAssert.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/XprHelper.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/Memory.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/IntegralConstant.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/Serializer.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/SymbolicIndex.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/EmulateArray.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/MoreMeta.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/NumTraits.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/MathFunctions.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/GenericPacketMath.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/MathFunctionsImpl.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/Default/ConjHelper.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/Default/Half.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/Default/BFloat16.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/SSE/PacketMath.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/SSE/TypeCasting.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/SSE/MathFunctions.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/SSE/Complex.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/Default/Settings.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/functors/TernaryFunctors.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/functors/BinaryFunctors.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/functors/UnaryFunctors.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/functors/NullaryFunctors.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/functors/StlFunctors.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/functors/AssignmentFunctors.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/IndexedViewHelper.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/ReshapedHelper.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/ArithmeticSequence.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/IO.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/DenseCoeffsBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/DenseBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/BlockMethods.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/IndexedViewMethods.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/ReshapedMethods.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/ReshapedMethods.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/MatrixBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/EigenBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Product.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/CoreEvaluators.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/AssignEvaluator.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Assign.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/ArrayBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/BlasUtil.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/DenseStorage.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/NestByValue.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/ReturnByValue.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/NoAlias.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/PlainObjectBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Matrix.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Array.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/CwiseTernaryOp.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/CwiseBinaryOp.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/CwiseUnaryOp.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/CwiseNullaryOp.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/CwiseUnaryView.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/SelfCwiseBinaryOp.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Dot.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/StableNorm.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Stride.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/MapBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Map.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Ref.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Block.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/VectorBlock.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/IndexedView.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Reshaped.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Transpose.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/DiagonalMatrix.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Diagonal.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/DiagonalProduct.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/SkewSymmetricMatrix3.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Redux.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Visitor.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Fuzzy.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Swap.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/CommaInitializer.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/GeneralProduct.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Solve.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Inverse.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/SolverBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/PermutationMatrix.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Transpositions.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/TriangularMatrix.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/SelfAdjointView.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/Parallelizer.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/ProductEvaluators.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/GeneralMatrixVector.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/GeneralMatrixMatrix.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/SolveTriangular.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/SelfadjointMatrixVector.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/SelfadjointProduct.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/SelfadjointRank2Update.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/TriangularMatrixVector.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/TriangularMatrixMatrix.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/TriangularSolverMatrix.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/TriangularSolverVector.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/BandMatrix.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/CoreIterators.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/ConditionEstimator.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Select.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/VectorwiseOp.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/PartialReduxEvaluator.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Random.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Replicate.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Reverse.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/ArrayWrapper.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/StlIterators.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/GlobalFunctions.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/util/ReenableStupidWarnings.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/IterativeLinearSolvers \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/SparseCore \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/Core \
  /opt/gcc-13.1.0/include/c++/13.1.0/map \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_tree.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_map.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_multimap.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
- /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseAssign.h \
- /usr/include/eigen3/Eigen/src/SparseCore/CompressedStorage.h \
- /usr/include/eigen3/Eigen/src/SparseCore/AmbiVector.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrix.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseMap.h \
- /usr/include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseVector.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseRef.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseTranspose.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseBlock.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseDot.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseRedux.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseView.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h \
- /usr/include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseProduct.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h \
- /usr/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseFuzzy.h \
- /usr/include/eigen3/Eigen/src/SparseCore/SparseSolverBase.h \
- /usr/include/eigen3/Eigen/OrderingMethods \
- /usr/include/eigen3/Eigen/src/OrderingMethods/Amd.h \
- /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
- /usr/include/eigen3/Eigen/src/OrderingMethods/Ordering.h \
- /usr/include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h \
- /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
- /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
- /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
- /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
- /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
- /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
- /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
- /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
+ /opt/gcc-13.1.0/include/c++/13.1.0/numeric \
+ /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_numeric.h \
+ /opt/gcc-13.1.0/include/c++/13.1.0/pstl/glue_numeric_defs.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseUtil.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseMatrixBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/BlockMethods.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseAssign.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/CompressedStorage.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/AmbiVector.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseCompressedBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseMatrix.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseMap.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseVector.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseRef.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseTranspose.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseBlock.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseDot.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseRedux.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseView.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseProduct.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseDenseProduct.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseTriangularView.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/TriangularSolver.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparsePermutation.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseFuzzy.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseSolverBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/OrderingMethods \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/OrderingMethods/Amd.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/OrderingMethods/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/OrderingMethods/Ordering.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/OrderingMethods/Eigen_Colamd.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/IterativeLinearSolvers/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/list \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_list.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/allocated_ptr.h \
@@ -416,9 +440,6 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /opt/gcc-13.1.0/include/c++/13.1.0/chrono \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/chrono.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/ratio \
- /opt/gcc-13.1.0/include/c++/13.1.0/cstdint \
- /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/stdint.h \
- /usr/include/stdint.h /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/ctime \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/parse_numbers.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/shared_ptr.h \
@@ -446,65 +467,79 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /opt/gcc-13.1.0/include/c++/13.1.0/x86_64-pc-linux-gnu/bits/c++io.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/fstream.tcc \
  /opt/gcc-13.1.0/include/c++/13.1.0/iostream \
- /home/adcm2/Documents/coupling_codes/coupling/work/src/calc_setup.h \
- /home/adcm2/Documents/coupling_codes/coupling/work/src/matrix_header.h \
- /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/LU \
- /usr/include/eigen3/Eigen/src/misc/Kernel.h \
- /usr/include/eigen3/Eigen/src/misc/Image.h \
- /usr/include/eigen3/Eigen/src/LU/FullPivLU.h \
- /usr/include/eigen3/Eigen/src/LU/PartialPivLU.h \
- /usr/include/eigen3/Eigen/src/LU/Determinant.h \
- /usr/include/eigen3/Eigen/src/LU/InverseImpl.h \
- /usr/include/eigen3/Eigen/src/LU/arch/Inverse_SSE.h \
- /usr/include/eigen3/Eigen/Cholesky /usr/include/eigen3/Eigen/Jacobi \
- /usr/include/eigen3/Eigen/src/Jacobi/Jacobi.h \
- /usr/include/eigen3/Eigen/src/Cholesky/LLT.h \
- /usr/include/eigen3/Eigen/src/Cholesky/LDLT.h \
- /usr/include/eigen3/Eigen/QR /usr/include/eigen3/Eigen/Householder \
- /usr/include/eigen3/Eigen/src/Householder/Householder.h \
- /usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h \
- /usr/include/eigen3/Eigen/src/Householder/BlockHouseholder.h \
- /usr/include/eigen3/Eigen/src/QR/HouseholderQR.h \
- /usr/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h \
- /usr/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h \
- /usr/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
- /usr/include/eigen3/Eigen/SVD \
- /usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
- /usr/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h \
- /usr/include/eigen3/Eigen/src/SVD/SVDBase.h \
- /usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h \
- /usr/include/eigen3/Eigen/src/SVD/BDCSVD.h \
- /usr/include/eigen3/Eigen/Geometry \
- /usr/include/eigen3/Eigen/src/Geometry/OrthoMethods.h \
- /usr/include/eigen3/Eigen/src/Geometry/EulerAngles.h \
- /usr/include/eigen3/Eigen/src/Geometry/Homogeneous.h \
- /usr/include/eigen3/Eigen/src/Geometry/RotationBase.h \
- /usr/include/eigen3/Eigen/src/Geometry/Rotation2D.h \
- /usr/include/eigen3/Eigen/src/Geometry/Quaternion.h \
- /usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h \
- /usr/include/eigen3/Eigen/src/Geometry/Transform.h \
- /usr/include/eigen3/Eigen/src/Geometry/Translation.h \
- /usr/include/eigen3/Eigen/src/Geometry/Scaling.h \
- /usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h \
- /usr/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h \
- /usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
- /usr/include/eigen3/Eigen/src/Geometry/Umeyama.h \
- /usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SSE.h \
- /usr/include/eigen3/Eigen/Eigenvalues \
- /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
- /home/adcm2/Documents/coupling_codes/coupling/work/src/spectra_header.h
+ /home/adcm2/raidam/coupling/work/src/calc_setup.h \
+ /home/adcm2/raidam/coupling/work/src/matrix_header.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/Dense \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/LU \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/misc/Kernel.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/misc/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/misc/Image.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/LU/FullPivLU.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/LU/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/LU/PartialPivLU.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/LU/Determinant.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/LU/InverseImpl.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/LU/arch/InverseSize4.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/LU/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/Cholesky \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/Jacobi \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Jacobi/Jacobi.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Jacobi/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Cholesky/LLT.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Cholesky/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Cholesky/LDLT.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/QR \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/Householder \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Householder/Householder.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Householder/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Householder/HouseholderSequence.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Householder/BlockHouseholder.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/QR/HouseholderQR.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/QR/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/QR/FullPivHouseholderQR.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/QR/ColPivHouseholderQR.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/SVD \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/misc/RealSvd2x2.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SVD/UpperBidiagonalization.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SVD/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SVD/SVDBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SVD/JacobiSVD.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SVD/BDCSVD.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/Geometry \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/OrthoMethods.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/EulerAngles.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/Homogeneous.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/RotationBase.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/Rotation2D.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/Quaternion.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/AngleAxis.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/Transform.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/Translation.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/Scaling.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/Hyperplane.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/ParametrizedLine.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/AlignedBox.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/Umeyama.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/arch/Geometry_SIMD.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/Eigenvalues \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/Tridiagonalization.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/InternalHeaderCheck.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/RealSchur.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/EigenSolver.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/RealSchur.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/Tridiagonalization.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/ComplexSchur.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/ComplexSchur.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/RealQZ.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/RealQZ.h \
+ /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+ /home/adcm2/raidam/coupling/work/src/spectra_header.h

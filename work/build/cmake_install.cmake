@@ -1,4 +1,4 @@
-# Install script for directory: /home/adcm2/Documents/coupling_codes/coupling/work
+# Install script for directory: /home/adcm2/raidam/coupling/work
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-build/cmake_install.cmake")
-  include("/home/adcm2/Documents/coupling_codes/coupling/work/build/src/cmake_install.cmake")
+  include("/home/adcm2/raidam/coupling/work/build/_deps/eigen3-build/cmake_install.cmake")
+  include("/home/adcm2/raidam/coupling/work/build/src/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/adcm2/Documents/coupling_codes/coupling/work/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/adcm2/raidam/coupling/work/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

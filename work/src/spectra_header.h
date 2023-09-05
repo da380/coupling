@@ -21,7 +21,7 @@ class modespectra {
                 double, double, double, double);
 
     // operator
-    double operator()(double);
+    // double operator()(double);
 
     // frequency of particular point
     // std::complex<double> freq_value(int);
@@ -39,6 +39,7 @@ class modespectra {
 
    private:
     double f1, f2, dt, tout, df0, wtb, t1, t2;
+    std::vector<double> w;
     using myvector = Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1>;
     using mymatrix =
         Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>;
@@ -93,6 +94,10 @@ modespectra::modespectra(std::string filepath, std::string filePath2, double f1,
     modespectra::f2 = (i2 - 1) * df;
     std::cout << modespectra::f1 << " " << modespectra::f2 << std::endl;
 
+    // fill out w
+    for (int idx = 0; idx < nt; ++idx) {
+        w.push_back(df * static_cast<double>(idx));
+    }
     //////////////////////////////////////////////////////////////////////////
     ///////////////      file opening and initialisation       ///////////////
     //////////////////////////////////////////////////////////////////////////
@@ -167,8 +172,8 @@ modespectra::modespectra(std::string filepath, std::string filePath2, double f1,
     ///////////////      file opening and initialisation       ///////////////
     //////////////////////////////////////////////////////////////////////////
 
-    ifstream vecfile("./vector_sr.bin", ifstream::binary);
-    // ifstream vecfile(filePath2, ifstream::binary);
+    // ifstream vecfile("./vector_sr.bin", ifstream::binary);
+    ifstream vecfile(filePath2, ifstream::binary);
     // check opened correctly
     if (!vecfile) {
         cout << "Cannot open file!" << endl;
@@ -221,4 +226,50 @@ modespectra::modespectra(std::string filepath, std::string filePath2, double f1,
         cout << "Error occurred at reading time!" << endl;
     }
 };
+
+// define operator
+Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1>
+modespectra::finv(std::complex<double> w) {
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic> A(
+        nelem, nelem);
+    A = a0 + w * a1 + w * w * a2;
+    Eigen::BiCGSTAB<
+        Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>,
+        Eigen::DiagonalPreconditioner<std::complex<double> > >
+        solver;
+    solver.setTolerance(1.0 * std::pow(10, -5));
+    solver.compute(A);
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> x;
+    x = solver.solve(vs);
+    return x;
+};
+
+Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>
+modespectra::fspectra() {
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic> tmp;
+    tmp.resize(nelem2 + 1, nt);
+    std::complex<double> myi(0.0, 1.0);
+
+    // go through frequencies:
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> vlhs;
+    for (int idx = 0; idx < nt; ++idx) {
+        for (int idx2 = 0; idx2 < nelem2 + 1; ++idx2) {
+            tmp(idx2, idx) = 0.0;
+        };
+        tmp(0, idx) = w[idx];
+        if (idx > i1 - 1 && idx < i2 + 1) {
+            vlhs =
+                modespectra::finv(modespectra::w[idx] + myi * modespectra::ep);
+            // for (int idx2 = 0;idx2<nelem2;++idx2){
+            // tmp(idx2,idx) =vr.adjoint() * vlhs;
+            // }
+            tmp.block(1, idx, nelem2, 1) = vr.adjoint() * vlhs;
+        };
+        std::cout << idx << " " << w[idx] << std::endl;
+    };
+
+    return tmp;
+    // return 0;
+};
+
 #endif
