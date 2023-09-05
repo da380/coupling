@@ -13,14 +13,212 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "calc_setup.h"
-#include "matrix_header.h"
 
-class modespectra{
-    public:
-    modespectra(std::string);
-    
-}
+class modespectra {
+   public:
+    // constructor
+    modespectra(std::string, std::string, double, double, double, double,
+                double, double, double, double);
 
+    // operator
+    double operator()(double);
 
+    // frequency of particular point
+    // std::complex<double> freq_value(int);
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>
+    fspectra();
+
+    // solve for spectra
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> finv(
+        std::complex<double>);
+
+    // number of points
+    int nt;
+    int i1, i2;
+    double df, ep;
+
+   private:
+    double f1, f2, dt, tout, df0, wtb, t1, t2;
+    using myvector = Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1>;
+    using mymatrix =
+        Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>;
+    mymatrix a0, a1, a2, vr;
+    myvector vs;
+    int nelem, nelem2;
+};
+
+modespectra::modespectra(std::string filepath, std::string filePath2, double f1,
+                         double f2, double dt, double tout, double df0,
+                         double wtb, double t1, double t2)
+    : f1{f1 / 1000.0},
+      f2{f2 / 1000.0},
+      dt{dt},
+      df0{df0 / 1000.0},
+      tout{tout * 3600.0},
+      t1{t1 * 3600.0},
+      t2{std::min(t2, tout) * 3600.0},
+      wtb{wtb * 3.1415926535 / 500.0} {
+    double fn = 0.5 / dt;
+    if (fn < f2) {
+        std::cout << "f2 is greater than the Nyquist frequency for the time "
+                     "step. Behaviour may be unexpected"
+                  << std::endl;
+        this->f2 = fn;
+    };
+    int mex = 5;
+    int qex = 4;
+
+    ep = mex / modespectra::tout;
+
+    df = ep / (6.28318530718 * qex);
+    // std::cout << "df: " << df << std::endl;
+    // std::cout << "ep: " << ep << std::endl;
+    // std::cout << "dt: " << dt << std::endl;
+    // std::cout << "t/dt: " << modespectra::tout / dt << std::endl;
+
+    nt = std::ceil(1.0 / (df * dt));
+    std::cout << "nt: " << nt << std::endl;
+    int ne = static_cast<int>(log(static_cast<double>(nt)) / log(2.0) + 1);
+    std::cout << "ne: " << ne << std::endl;
+    nt = pow(2, ne);
+
+    df = 1.0 / (nt * dt);
+
+    i1 = std::max(static_cast<int>(std::floor(modespectra::f1 / df)), 2);
+    modespectra::f1 = (i1 - 1) * df;
+    std::cout << "nt: " << nt << std::endl;
+    std::cout << "f1: " << f1 << std::endl;
+    i2 = static_cast<int>(std::floor(modespectra::f2 / df)) + 2;
+
+    modespectra::f2 = (i2 - 1) * df;
+    std::cout << modespectra::f1 << " " << modespectra::f2 << std::endl;
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////////////      file opening and initialisation       ///////////////
+    //////////////////////////////////////////////////////////////////////////
+
+    ifstream infile(filepath, ifstream::binary);
+
+    // check opened correctly
+    if (!infile) {
+        cout << "Cannot open file!" << endl;
+    }
+
+    // find the length of the file
+    infile.seekg(0, ios::end);
+    int file_size = infile.tellg();
+    cout << "Size of the file is " << file_size << " bytes" << endl;
+    infile.seekg(0, infile.beg);   // reset back to beginning
+
+    // finding number of elements
+    nelem = sqrt((file_size - 24) / (3 * 16));
+    cout << nelem << endl;
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////////////     reading in data into a0, a1 and a2     ///////////////
+    //////////////////////////////////////////////////////////////////////////
+    // placeholder byte size 4, ie same as integer
+    int i, matbytes;
+    infile.read(reinterpret_cast<char *>(&i), sizeof(i));   // head placeholder
+    double matbreak;   // placeholder between matrices
+
+    // reading into Eigen Matrix complex double. Need to have dynamic at start
+    // as only find size at compile time
+    // Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic> a0,
+    // a1, a2;
+
+    // resizing matrices using size found
+    a0.resize(nelem, nelem);
+    a1.resize(nelem, nelem);
+    a2.resize(nelem, nelem);
+
+    // size of matrices in bytes
+    matbytes = nelem * nelem * 16;
+
+    // read matrices
+    infile.read(reinterpret_cast<char *>(a0.data()), matbytes);
+    infile.read(reinterpret_cast<char *>(&matbreak), 8);   // placeholder
+    infile.read(reinterpret_cast<char *>(a1.data()), matbytes);
+    infile.read(reinterpret_cast<char *>(&matbreak), 8);   // placeholder
+    infile.read(reinterpret_cast<char *>(a2.data()), matbytes);
+    infile.read(reinterpret_cast<char *>(&i), sizeof(i));   // placeholder
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////////////                   checks                 ///////////////
+    //////////////////////////////////////////////////////////////////////////
+    //  cout << a0(0, 0) << endl;
+    //  cout << a0(1, 0) << endl;
+    //  cout << a1(0, 0) << endl;
+    //  cout << a1(nelem - 1, nelem - 1) << endl;
+    //  cout << a2(0, 0) << endl;
+    //  cout << a2(1, 0) << endl;
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////////////   closing and checking closed correctly    ///////////////
+    //////////////////////////////////////////////////////////////////////////
+    // close
+    infile.close();
+    // check
+    if (!infile.good()) {
+        cout << "Error occurred at reading time!" << endl;
+    }
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////////////      file opening and initialisation       ///////////////
+    //////////////////////////////////////////////////////////////////////////
+
+    ifstream vecfile("./vector_sr.bin", ifstream::binary);
+    // ifstream vecfile(filePath2, ifstream::binary);
+    // check opened correctly
+    if (!vecfile) {
+        cout << "Cannot open file!" << endl;
+    }
+
+    // find the length of the file
+    vecfile.seekg(0, ios::end);
+    int file_size2 = vecfile.tellg();
+    cout << "Size of the file is " << file_size2 << " bytes" << endl;
+    vecfile.seekg(0, vecfile.beg);   // reset back to beginning
+
+    // finding number of elements
+    nelem2 = (file_size2 - 16) / (16 * nelem) - 1;
+    cout << nelem2 << endl;
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////////////     reading in data into a0, a1 and a2     ///////////////
+    //////////////////////////////////////////////////////////////////////////
+    // // placeholder byte size 4, ie same as integer
+    // int i, matbytes;
+    vecfile.read(reinterpret_cast<char *>(&i), sizeof(i));   // head
+    // resizing matrices using size found
+    vs.resize(nelem);
+    vr.resize(nelem, nelem2);
+
+    int vecbytes;
+    vecbytes = 16 * nelem;
+
+    // read matrices
+    vecfile.read(reinterpret_cast<char *>(vs.data()), vecbytes);
+    vecfile.read(reinterpret_cast<char *>(&i), sizeof(i));   // placeholder
+    vecfile.read(reinterpret_cast<char *>(&i), sizeof(i));   // placeholder
+    vecfile.read(reinterpret_cast<char *>(vr.data()), vecbytes * nelem2);
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////////////                   checks                 ///////////////
+    //////////////////////////////////////////////////////////////////////////
+    // cout << vs(0) << endl;
+    // cout << vs(1) << endl;
+    // cout << vr(0, 0) << endl;
+    // cout << vr(1, 0) << endl;
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////////////   closing and checking closed correctly    ///////////////
+    //////////////////////////////////////////////////////////////////////////
+    // close
+    vecfile.close();
+    // check
+    if (!vecfile.good()) {
+        cout << "Error occurred at reading time!" << endl;
+    }
+};
 #endif

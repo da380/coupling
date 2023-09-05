@@ -13,17 +13,17 @@ project(eigen3-populate NONE)
 # Pass through things we've already detected in the main project to avoid
 # paying the cost of redetecting them again in ExternalProject_Add()
 set(GIT_EXECUTABLE [==[/usr/bin/git]==])
-set(GIT_VERSION_STRING [==[2.17.1]==])
+set(GIT_VERSION_STRING [==[2.25.1]==])
 set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
-  [==[/usr/bin/git;2.17.1]==]
+  [==[/usr/bin/git;2.25.1]==]
 )
 
 
 include(ExternalProject)
 ExternalProject_Add(eigen3-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://gitlab.com/libeigen/eigen.git" "GIT_TAG" "master"
-                    SOURCE_DIR          "/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src"
-                    BINARY_DIR          "/home/adcm2/raidam/coupling/work/build/_deps/eigen3-build"
+                    SOURCE_DIR          "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src"
+                    BINARY_DIR          "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

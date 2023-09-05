@@ -31,7 +31,7 @@ class modematrix {
     //      Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1>);
 
     // solve for spectra
-    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> fspectra(
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> finv(
         std::complex<double>);
 
    private:
@@ -177,7 +177,7 @@ modematrix::modematrix(std::string filepath) {
 
 // define operator
 Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1>
-modematrix::fspectra(std::complex<double> w) {
+modematrix::finv(std::complex<double> w) {
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic> A(
         nelem, nelem);
     A = a0 + w * a1 + w * w * a2;

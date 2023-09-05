@@ -4,7 +4,7 @@
 # compile CXX with /opt/gcc-13.1.0/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src -I/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src/unsupported/doc/examples/../../../unsupported -I/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src/unsupported/doc/examples/../../../unsupported/test
+CXX_INCLUDES = -I/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src -I/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src/unsupported/doc/examples/../../../unsupported -I/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src/unsupported/doc/examples/../../../unsupported/test
 
 CXX_FLAGS =  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -O3 -DNDEBUG -std=gnu++20
 

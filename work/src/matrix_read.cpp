@@ -12,6 +12,7 @@
 
 #include "calc_setup.h"
 #include "matrix_header.h"
+#include "spectra_header.h"
 
 using std::cout;
 using std::endl;
@@ -21,9 +22,13 @@ using namespace std::chrono;
 
 int
 main() {
+    // std::string filePath =
+    //     "/home/adcm2/raidam/coupling/"
+    //     "work/matrix.bin";
     std::string filePath =
-        "/home/adcm2/raidam/coupling/"
-        "work/matrix.bin";
+        "/home/adcm2/Documents/coupling_codes/coupling/work/matrix.bin";
+    std::string filePath2 =
+        "/home/adcm2/Documents/coupling_codes/coupling/work/vector_sr.bin";
 
     modematrix testclass(filePath);
     double f1 = 0.1;       // minimum (mHz)
@@ -36,6 +41,7 @@ main() {
     double t2 = 256.0;     // cosine bell stop (hrs)
     freq_setup mytest(f1, f2, dt, tout, df0, wtb, t1, t2);
     mytest(5);
+    modespectra mymode(filePath, filePath2, f1, f2, dt, tout, df0, wtb, t1, t2);
 
     // test spectra
     // testclass.fspectra(mytest.freq_value(1));

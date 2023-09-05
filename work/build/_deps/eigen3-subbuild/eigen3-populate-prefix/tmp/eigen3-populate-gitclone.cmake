@@ -3,21 +3,21 @@
 
 cmake_minimum_required(VERSION 3.5)
 
-if(EXISTS "/raid/adcm2/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitclone-lastrun.txt" AND EXISTS "/raid/adcm2/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitinfo.txt" AND
-  "/raid/adcm2/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitclone-lastrun.txt" IS_NEWER_THAN "/raid/adcm2/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitinfo.txt")
+if(EXISTS "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitclone-lastrun.txt" AND EXISTS "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitinfo.txt" AND
+  "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitclone-lastrun.txt" IS_NEWER_THAN "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitinfo.txt")
   message(STATUS
     "Avoiding repeated git clone, stamp file is up to date: "
-    "'/raid/adcm2/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitclone-lastrun.txt'"
+    "'/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitclone-lastrun.txt'"
   )
   return()
 endif()
 
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E rm -rf "/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src"
+  COMMAND ${CMAKE_COMMAND} -E rm -rf "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src"
   RESULT_VARIABLE error_code
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to remove directory: '/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src'")
+  message(FATAL_ERROR "Failed to remove directory: '/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src'")
 endif()
 
 # try the clone 3 times in case there is an odd git clone issue
@@ -27,7 +27,7 @@ while(error_code AND number_of_tries LESS 3)
   execute_process(
     COMMAND "/usr/bin/git" 
             clone --no-checkout --config "advice.detachedHead=false" "https://gitlab.com/libeigen/eigen.git" "eigen3-src"
-    WORKING_DIRECTORY "/home/adcm2/raidam/coupling/work/build/_deps"
+    WORKING_DIRECTORY "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps"
     RESULT_VARIABLE error_code
   )
   math(EXPR number_of_tries "${number_of_tries} + 1")
@@ -42,7 +42,7 @@ endif()
 execute_process(
   COMMAND "/usr/bin/git" 
           checkout "master" --
-  WORKING_DIRECTORY "/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src"
+  WORKING_DIRECTORY "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src"
   RESULT_VARIABLE error_code
 )
 if(error_code)
@@ -54,20 +54,20 @@ if(init_submodules)
   execute_process(
     COMMAND "/usr/bin/git" 
             submodule update --recursive --init 
-    WORKING_DIRECTORY "/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src"
+    WORKING_DIRECTORY "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src"
     RESULT_VARIABLE error_code
   )
 endif()
 if(error_code)
-  message(FATAL_ERROR "Failed to update submodules in: '/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src'")
+  message(FATAL_ERROR "Failed to update submodules in: '/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src'")
 endif()
 
 # Complete success, update the script-last-run stamp file:
 #
 execute_process(
-  COMMAND ${CMAKE_COMMAND} -E copy "/raid/adcm2/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitinfo.txt" "/raid/adcm2/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitclone-lastrun.txt"
+  COMMAND ${CMAKE_COMMAND} -E copy "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitinfo.txt" "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitclone-lastrun.txt"
   RESULT_VARIABLE error_code
 )
 if(error_code)
-  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/raid/adcm2/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitclone-lastrun.txt'")
+  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-subbuild/eigen3-populate-prefix/src/eigen3-populate-stamp/eigen3-populate-gitclone-lastrun.txt'")
 endif()

@@ -54,7 +54,7 @@ unset(_cmake_expected_targets)
 add_library(Eigen3::Eigen INTERFACE IMPORTED)
 
 set_target_properties(Eigen3::Eigen PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src"
 )
 
 # This file does not depend on other imported targets which have

@@ -1,6 +1,6 @@
 
-set(CTEST_SOURCE_DIRECTORY  "/home/adcm2/raidam/coupling/work")
-set(CTEST_BINARY_DIRECTORY  "/home/adcm2/raidam/coupling/work/build")
+set(CTEST_SOURCE_DIRECTORY  "/home/adcm2/Documents/coupling_codes/coupling/work")
+set(CTEST_BINARY_DIRECTORY  "/home/adcm2/Documents/coupling_codes/coupling/work/build")
 set(CTEST_CMAKE_GENERATOR   "Unix Makefiles")
 set(CTEST_BUILD_NAME        "")
 set(CTEST_SITE              "")

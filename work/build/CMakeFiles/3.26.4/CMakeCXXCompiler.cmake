@@ -79,5 +79,5 @@ endif()
 
 set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/opt/gcc-13.1.0/include/c++/13.1.0;/opt/gcc-13.1.0/include/c++/13.1.0/x86_64-pc-linux-gnu;/opt/gcc-13.1.0/include/c++/13.1.0/backward;/opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include;/usr/local/include;/opt/gcc-13.1.0/include;/opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include-fixed/x86_64-linux-gnu;/opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include-fixed;/usr/include/x86_64-linux-gnu;/usr/include")
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;c;gcc_s;gcc")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0;/opt/gcc-13.1.0/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/opt/gcc-13.1.0/lib")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0;/opt/gcc-13.1.0/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/usr/lib64;/opt/gcc-13.1.0/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

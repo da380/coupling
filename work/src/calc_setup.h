@@ -25,11 +25,11 @@ class freq_setup {
 
     // frequency of particular point
     // std::complex<double> freq_value(int);
-    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> fspectra(
-        std::complex<double>);
+    // Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>
+    // fspectra();
 
-        // number of points
-        int nt;
+    // number of points
+    int nt;
     int i1, i2;
     double df, ep;
 
@@ -95,6 +95,11 @@ freq_setup::operator()(double x) {
     //  std::cout << t2 << std::endl;
     return x;
 };
+
+// Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>
+//         freq_setup::fspectra(){
+
+//         };
 
 // std::complex<double>
 // freq_setup::freq_value(int n) {

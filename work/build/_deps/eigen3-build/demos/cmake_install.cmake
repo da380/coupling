@@ -1,4 +1,4 @@
-# Install script for directory: /home/adcm2/raidam/coupling/work/build/_deps/eigen3-src/demos
+# Install script for directory: /home/adcm2/Documents/coupling_codes/coupling/work/build/_deps/eigen3-src/demos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
