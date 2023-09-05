@@ -30,7 +30,7 @@ class modematrix {
     //      std::complex<double>,
     //      Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1>);
 
-    // generate spectra
+    // solve for spectra
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> fspectra(
         std::complex<double>);
 

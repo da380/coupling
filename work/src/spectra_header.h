@@ -13,4 +13,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "calc_setup.h"
+#include "matrix_header.h"
+
+class modespectra{
+    public:
+    modespectra(std::string);
+    
+}
+
+
 #endif

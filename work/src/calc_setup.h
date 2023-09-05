@@ -13,6 +13,8 @@
 #include <string>
 #include <vector>
 
+#include "matrix_header.h"
+
 class freq_setup {
    public:
     // constructor
@@ -23,8 +25,11 @@ class freq_setup {
 
     // frequency of particular point
     // std::complex<double> freq_value(int);
-    // number of points
-    int nt;
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> fspectra(
+        std::complex<double>);
+
+        // number of points
+        int nt;
     int i1, i2;
     double df, ep;
 
