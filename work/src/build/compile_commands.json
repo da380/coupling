@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/raid/adcm2/coupling/work/src/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/matrix_read.dir/matrix_read.cpp.o -c /raid/adcm2/coupling/work/src/matrix_read.cpp",
-  "file": "/raid/adcm2/coupling/work/src/matrix_read.cpp",
-  "output": "CMakeFiles/matrix_read.dir/matrix_read.cpp.o"
-}
-]

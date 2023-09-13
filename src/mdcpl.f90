@@ -265,11 +265,11 @@ program mdcpl
   write(35) a1(1:nelem,1:nelem)
   write(35) a2(1:nelem,1:nelem)
   close(35)
-  print *, a0(1:5,1)
-  print *, a1(1:5,1)
-  print *, a2(1:5,1)
-  print *, "hello"
-  print *, a1(nelem, nelem)
+  print *, a0(1:3,1)
+  print *, a1(1:3,1)
+  print *, a2(1:3,1)
+!   print *, "hello"
+!   print *, a1(nelem, nelem)
  
 !   open(35,file='matrixPd.dat',form='formatted')
 !   write(35,*) nelem

@@ -8,20 +8,20 @@ fmin=0.1
 fmax=1.0
 
 # time step (seconds)
-tstep=20
+tstep=50
 
 # time length (hours)
-tend=256
+tend=50
 
 # frequency step (mHz)
-fstep=0.01
+fstep=0.05
 
 # target block width (mHz)
 fblock=0.05
 
 # start and end times for Cosine Bell window (hours)
 wstart=0
-wend=256
+wend=50
 
 # source file
 source="dspec.source"
