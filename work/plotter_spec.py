@@ -8,13 +8,13 @@ d2 = np.loadtxt('testrawspec.out')
 # print(len(d2))
 idx = 0
 idx2 = 0
-while idx < d2.shape[0]:
-    idx2 = 0
-    while idx2 < d2.shape[1]:
-        if abs(d2[idx,idx2]) > 1:
-            d2[idx,idx2] = 0
-        idx2 += 1
-    idx+=1
+# while idx < d2.shape[0]:
+#     idx2 = 0
+#     while idx2 < d2.shape[1]:
+#         if abs(d2[idx,idx2]) > 1:
+#             d2[idx,idx2] = 0
+#         idx2 += 1
+#     idx+=1
 plt.plot(1000*d[:,0],d[:,1],'k')
 # plt.plot(1000*d[:,0], d2[0:len(d),2],'r')
 # plt.plot(1000*d[:,0],d[:,2],'r')
@@ -32,6 +32,6 @@ plt.plot(1000*d[:,0],d[:,1],'k')
 
 # plt.gca().set_yticks([])
 # plt.yticks([])
-plt.xlim(0,1)
+# plt.xlim(0,1)
 plt.xlabel('Frequency (mHz)')
 plt.show()

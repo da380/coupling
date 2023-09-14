@@ -112,6 +112,9 @@ modespectra::modespectra(std::string filepath, std::string filePath2, double f1,
     for (int idx = 0; idx < nt; ++idx) {
         w.push_back(df * static_cast<double>(idx));
     }
+
+    // change dt
+    this->dt = 3.1415926535 / ((this->nt - 1) * this->df);
     //////////////////////////////////////////////////////////////////////////
     ///////////////      file opening and initialisation       ///////////////
     //////////////////////////////////////////////////////////////////////////
@@ -388,14 +391,26 @@ modespectra::rawspectra() {
 
 Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>
 modespectra::fspectra() {
+    // do Fourier transform
+    using Float = double;
+    using Complex = std::complex<Float>;
+    using RealVector = FFTWpp::vector<Float>;
+    using ComplexVector = FFTWpp::vector<Complex>;
+    using namespace std::complex_literals;
+
+    // set up for FT
+    int n = 2 * (nt - 1);
+    RealVector testFL(n), checkFL(n);
+    ComplexVector outFL(nt);
+
+    // Form the plans.
+    auto flag = FFTWpp::Measure | FFTWpp::Estimate;
+
+    auto backward_plan = FFTWpp::MakePlan1D(outFL, checkFL, flag);
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic> rawspec,
         tmpspec;
     rawspec = modespectra::rawspectra();
     tmpspec.resize(this->nelem2 + 1, this->nt);
-    // std::cout << "Testing, hello: \n";
-    // std::cout << rawspec.rows() << ";" << this->nelem2 << "  " <<
-    // rawspec.cols()
-    //           << ";" << nt << std::endl;
 
     // set up Hann filter
     double fac = 0.1;
@@ -408,51 +423,38 @@ modespectra::fspectra() {
     for (int idx = 0; idx < this->nt - 1; ++idx) {
         double finp;
         finp = idx * this->df;
-        // std::cout << idx << std::endl;
-        // std::cout << filters::hann(&finp, &f11, &f12, &f21, &f22) <<
-        // std::endl; std::cout << rawspec.block(1, idx, this->nelem2, 1) <<
-        // std::endl; std::cout << tmpspec.block(1, idx, this->nelem2, 1) <<
-        // std::endl;
+        tmpspec(0, idx) = rawspec(0, idx);
         tmpspec.block(1, idx, this->nelem2, 1) =
             rawspec.block(1, idx, this->nelem2, 1) *
             filters::hann(&finp, &f11, &f12, &f21, &f22);
     }
 
-    //do Fourier transform
-    using Float = double;
-    using Complex = std::complex<Float>;
-    using RealVector = FFTWpp::vector<Float>;
-    using ComplexVector = FFTWpp::vector<Complex>;
-    using namespace std::complex_literals;
+    // fill out for FT
+    for (int idx = 0; idx < nt; ++idx) {
+        outFL[idx] = (tmpspec(1, idx));
+    }
 
-    // generate a random size for the data
-    int n = pow(2, 15);
+    // execute FT
 
-    // Initialise the vectors.
-    // std::vector<float> in(n);
-    // RealVector in(n), check(n);
-    // ComplexVector out(n / 2 + 1);
-    RealVector testFL(n), checkFL(n);
-    ComplexVector outFL(n / 2 + 1);
-    // Float L, dw;
-    // Complex w, weval, meps;
-    // Float mepsR, wR, tmax;
-    // const Complex myi(0.0, 1.0);
-    // std::vector<Float> t;
+    backward_plan.Execute();
 
-    // std::cout << myi << std::endl;
-    {
-        // Form the plans.
-        auto flag = FFTWpp::Measure | FFTWpp::Estimate;
+    // do corrections
+    auto myit2 = checkFL.begin();
+    for (int idx = 0; idx < n; ++idx) {
+        myit2[idx] = myit2[idx] *
+                     exp(this->ep * dt * static_cast<double>(idx)) * df *
+                     static_cast<double>(nt - 1) /
+                     (2.0 * 3.1415926535 * static_cast<Float>(n));
+    }
 
-        // auto inView = FFTWpp::MakeDataView1D();
-        // auto outView = FFTWpp::MakeDataView1D(outFL);
-
-        // auto forward_plan = FFTWpp::Plan(inView, outView, flag);
-
-        auto backward_plan = FFTWpp::MakePlan1D(outFL, checkFL, flag);
-
-        auto myit = outFL.begin();}
+    // output
+    std::ofstream myfile;
+    myfile.open("tspectratest.out", std::ios::trunc);
+    for (int idx = 0; idx < n; ++idx) {
+        myfile << this->dt * static_cast<double>(idx) << ";" << myit2[idx]
+               << std::endl;
+    }
+    myfile.close();
 
     return tmpspec;
     // return 0;
