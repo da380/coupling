@@ -568,5 +568,41 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o
  /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/RealQZ.h
  /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
  /home/adcm2/raidam/coupling/work/src/spectra_header.h
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/All
+ /usr/include/fftw3.h
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Concepts.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/iterator
+ /opt/gcc-13.1.0/include/c++/13.1.0/bits/stream_iterator.h
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Memory.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/memory
+ /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_raw_storage_iter.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/bits/shared_ptr_atomic.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/bits/atomic_base.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/bits/atomic_lockfree_defines.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/bits/atomic_wait.h
+ /usr/include/unistd.h
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h
+ /usr/include/x86_64-linux-gnu/bits/environments.h
+ /usr/include/x86_64-linux-gnu/bits/confname.h
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h
+ /usr/include/syscall.h
+ /usr/include/x86_64-linux-gnu/sys/syscall.h
+ /usr/include/x86_64-linux-gnu/asm/unistd.h
+ /usr/include/x86_64-linux-gnu/asm/unistd_64.h
+ /usr/include/x86_64-linux-gnu/bits/syscall.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/bits/std_mutex.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/backward/auto_ptr.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/bits/ranges_uninitialized.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/pstl/glue_memory_defs.h
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Wisdom.h
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Flags.h
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Concepts.h
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Views.h
+ /opt/gcc-13.1.0/include/c++/13.1.0/ranges
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Memory.h
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Plan.h
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Flags.h
+ /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Eigen.h
  /home/adcm2/raidam/coupling/work/src/filter_header.h
 

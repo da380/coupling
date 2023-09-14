@@ -6,6 +6,8 @@
 #include <Eigen/Core>
 #include <Eigen/Dense>
 #include <Eigen/IterativeLinearSolvers>
+#include <FFTWpp/All>
+// #include "./FFTWpp/All"
 #include <chrono>
 #include <complex>
 #include <fstream>
@@ -415,6 +417,43 @@ modespectra::fspectra() {
             rawspec.block(1, idx, this->nelem2, 1) *
             filters::hann(&finp, &f11, &f12, &f21, &f22);
     }
+
+    //do Fourier transform
+    using Float = double;
+    using Complex = std::complex<Float>;
+    using RealVector = FFTWpp::vector<Float>;
+    using ComplexVector = FFTWpp::vector<Complex>;
+    using namespace std::complex_literals;
+
+    // generate a random size for the data
+    int n = pow(2, 15);
+
+    // Initialise the vectors.
+    // std::vector<float> in(n);
+    // RealVector in(n), check(n);
+    // ComplexVector out(n / 2 + 1);
+    RealVector testFL(n), checkFL(n);
+    ComplexVector outFL(n / 2 + 1);
+    // Float L, dw;
+    // Complex w, weval, meps;
+    // Float mepsR, wR, tmax;
+    // const Complex myi(0.0, 1.0);
+    // std::vector<Float> t;
+
+    // std::cout << myi << std::endl;
+    {
+        // Form the plans.
+        auto flag = FFTWpp::Measure | FFTWpp::Estimate;
+
+        // auto inView = FFTWpp::MakeDataView1D();
+        // auto outView = FFTWpp::MakeDataView1D(outFL);
+
+        // auto forward_plan = FFTWpp::Plan(inView, outView, flag);
+
+        auto backward_plan = FFTWpp::MakePlan1D(outFL, checkFL, flag);
+
+        auto myit = outFL.begin();}
+
     return tmpspec;
     // return 0;
 };

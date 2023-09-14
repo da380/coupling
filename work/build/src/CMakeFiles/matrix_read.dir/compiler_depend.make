@@ -567,8 +567,68 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
   /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/RealQZ.h \
   /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
   /home/adcm2/raidam/coupling/work/src/spectra_header.h \
+  _deps/fftwpp-src/FFTWpp/All \
+  /usr/include/fftw3.h \
+  _deps/fftwpp-src/FFTWpp/src/Concepts.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/iterator \
+  /opt/gcc-13.1.0/include/c++/13.1.0/bits/stream_iterator.h \
+  _deps/fftwpp-src/FFTWpp/src/Memory.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/memory \
+  /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_raw_storage_iter.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/bits/shared_ptr_atomic.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/bits/atomic_base.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/bits/atomic_lockfree_defines.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/bits/atomic_wait.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/syscall.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/bits/std_mutex.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/backward/auto_ptr.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/bits/ranges_uninitialized.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/pstl/glue_memory_defs.h \
+  _deps/fftwpp-src/FFTWpp/src/Wisdom.h \
+  _deps/fftwpp-src/FFTWpp/src/Flags.h \
+  _deps/fftwpp-src/FFTWpp/src/Concepts.h \
+  _deps/fftwpp-src/FFTWpp/src/Views.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/ranges \
+  _deps/fftwpp-src/FFTWpp/src/Memory.h \
+  _deps/fftwpp-src/FFTWpp/src/Plan.h \
+  _deps/fftwpp-src/FFTWpp/src/Flags.h \
+  _deps/fftwpp-src/FFTWpp/src/Eigen.h \
   /home/adcm2/raidam/coupling/work/src/filter_header.h
 
+
+/opt/gcc-13.1.0/include/c++/13.1.0/ranges:
+
+_deps/fftwpp-src/FFTWpp/src/Views.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/pstl/glue_memory_defs.h:
+
+/usr/include/x86_64-linux-gnu/asm/unistd_64.h:
+
+/usr/include/syscall.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/atomic_wait.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/atomic_base.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/shared_ptr_atomic.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/iterator:
+
+_deps/fftwpp-src/FFTWpp/src/Concepts.h:
+
+_deps/fftwpp-src/FFTWpp/All:
 
 /home/adcm2/raidam/coupling/work/src/spectra_header.h:
 
@@ -637,6 +697,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/LU/arch/InverseSize4.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/LU/InverseImpl.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/atomic_lockfree_defines.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/LU/Determinant.h:
 
@@ -738,9 +800,15 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h:
 
+/opt/gcc-13.1.0/include/c++/13.1.0/memory:
+
+_deps/fftwpp-src/FFTWpp/src/Memory.h:
+
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseDiagonalProduct.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseView.h:
 
@@ -822,6 +890,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/std_mutex.h:
+
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
@@ -848,11 +918,15 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /usr/include/locale.h:
 
+/usr/include/fftw3.h:
+
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/range_access.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/CwiseUnaryView.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/exception:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseBlock.h:
 
@@ -926,6 +1000,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/GeneralMatrixMatrix.h:
 
+_deps/fftwpp-src/FFTWpp/src/Eigen.h:
+
 /usr/include/asm-generic/errno-base.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
@@ -982,6 +1058,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
+_deps/fftwpp-src/FFTWpp/src/Plan.h:
+
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Geometry/EulerAngles.h:
 
 /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/stddef.h:
@@ -1004,6 +1082,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /opt/gcc-13.1.0/include/c++/13.1.0/tr1/hypergeometric.tcc:
 
+/usr/include/x86_64-linux-gnu/asm/unistd.h:
+
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_pair.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/IndexedView.h:
@@ -1013,6 +1093,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 /opt/gcc-13.1.0/include/c++/13.1.0/pstl/execution_defs.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/syscall.h:
 
 /usr/include/alloca.h:
 
@@ -1060,6 +1142,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /opt/gcc-13.1.0/include/c++/13.1.0/cmath:
 
+/opt/gcc-13.1.0/include/c++/13.1.0/backward/auto_ptr.h:
+
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/refwrap.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_map.h:
@@ -1101,6 +1185,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 /opt/gcc-13.1.0/include/c++/13.1.0/cctype:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/x86_64-pc-linux-gnu/bits/os_defines.h:
+
+/usr/include/x86_64-linux-gnu/sys/syscall.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
@@ -1168,6 +1254,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/SkewSymmetricMatrix3.h:
 
+_deps/fftwpp-src/FFTWpp/src/Wisdom.h:
+
 /opt/gcc-13.1.0/include/c++/13.1.0/functional:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/CommonCwiseUnaryOps.h:
@@ -1208,6 +1296,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
 /home/adcm2/raidam/coupling/work/src/matrix_header.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/ranges_cmp.h:
@@ -1229,6 +1319,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 /opt/gcc-13.1.0/include/c++/13.1.0/compare:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/Assign.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/plugins/ArrayCwiseBinaryOps.h:
 
@@ -1386,6 +1478,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/stream_iterator.h:
+
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/alloc_traits.h:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
@@ -1442,6 +1536,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/GenericPacketMath.h:
 
+/usr/include/unistd.h:
+
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/products/TriangularSolverVector.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/x86_64-pc-linux-gnu/bits/time_members.h:
@@ -1465,6 +1561,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 /opt/gcc-13.1.0/include/c++/13.1.0/tr1/modified_bessel_func.tcc:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/VectorwiseOp.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/ranges_uninitialized.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/SparseCore/SparseProduct.h:
 
@@ -1497,6 +1595,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 /opt/gcc-13.1.0/include/c++/13.1.0/numeric:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/IO.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_raw_storage_iter.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/DenseBase.h:
 
@@ -1597,6 +1697,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/arch/SSE/PacketMath.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/GeneralProduct.h:
+
+_deps/fftwpp-src/FFTWpp/src/Flags.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Core/TriangularMatrix.h:
 
