@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 d = np.loadtxt('test.out', delimiter = ';')
 d2 = np.loadtxt('testrawspec.out')
+d3 = np.loadtxt('fspectra.out', delimiter = ';')
 
 # print(len(d))
 # print(len(d2))
@@ -15,7 +16,8 @@ idx2 = 0
 #             d2[idx,idx2] = 0
 #         idx2 += 1
 #     idx+=1
-plt.plot(1000*d[:,0],d[:,1],'k')
+# plt.plot(1000*d[:,0],d[:,1],'k')
+plt.plot(d3[:,0], d3[:,3], 'k')
 # plt.plot(1000*d[:,0], d2[0:len(d),2],'r')
 # plt.plot(1000*d[:,0],d[:,2],'r')
 # plt.plot(1000*d[:,0],d[:,3],'b')

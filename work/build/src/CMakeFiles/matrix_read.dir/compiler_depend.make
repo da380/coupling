@@ -566,7 +566,7 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
   /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
   /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/RealQZ.h \
   /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
-  /home/adcm2/raidam/coupling/work/src/spectra_header.h \
+  /home/adcm2/raidam/coupling/work/src/spectra_eval.h \
   _deps/fftwpp-src/FFTWpp/All \
   /usr/include/fftw3.h \
   _deps/fftwpp-src/FFTWpp/src/Concepts.h \
@@ -630,7 +630,7 @@ _deps/fftwpp-src/FFTWpp/src/Concepts.h:
 
 _deps/fftwpp-src/FFTWpp/All:
 
-/home/adcm2/raidam/coupling/work/src/spectra_header.h:
+/home/adcm2/raidam/coupling/work/src/spectra_eval.h:
 
 /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h:
 
