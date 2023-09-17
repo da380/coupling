@@ -1,1 +1,1 @@
-/opt/gcc-13.1.0/bin/g++ CMakeFiles/matrix_read.dir/matrix_read.cpp.o -o ../bin/matrix_read  /usr/lib/x86_64-linux-gnu/libfftw3.so /usr/lib/x86_64-linux-gnu/libfftw3f.so /usr/lib/x86_64-linux-gnu/libfftw3l.so 
+/usr/bin/g++ CMakeFiles/matrix_read.dir/matrix_read.cpp.o -o ../bin/matrix_read  /usr/lib/x86_64-linux-gnu/libfftw3.so /usr/lib/x86_64-linux-gnu/libfftw3f.so /usr/lib/x86_64-linux-gnu/libfftw3l.so 

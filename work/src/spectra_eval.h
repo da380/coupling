@@ -213,7 +213,9 @@ modespectra::modespectra(std::string filepath, std::string filePath2, double f1,
     //////////////////////////////////////////////////////////////////////////
     ///////////////      file opening and initialisation       ///////////////
     //////////////////////////////////////////////////////////////////////////
-    ifstream freqfile("/home/adcm2/raidam/coupling/work/freq_sph.bin",
+    // ifstream freqfile("/home/adcm2/raidam/coupling/work/freq_sph.bin",
+    //                   ifstream::binary);
+    ifstream freqfile("/home/alex/Documents/c++/coupling/work/freq_sph.bin",
                       ifstream::binary);
     // check opened correctly
     if (!freqfile) {
@@ -438,8 +440,8 @@ modespectra::fspectra() {
     std::ofstream specout;
     specout.open("fspectra.out", std::ios::trunc);
     for (int idx = i12; idx < i22; ++idx) {
-        specout << df2 * idx * 1000.0 << ";" << myit5[idx].real() << ";"
-                << myit5[idx].real() << ";" << std::abs(myit5[idx])
+        specout << df2 * idx * 1000.0 << ";" << myit5[idx].real() * dt << ";"
+                << myit5[idx].imag() * dt << ";" << std::abs(myit5[idx]) * dt
                 << std::endl;
     }
     specout.close();

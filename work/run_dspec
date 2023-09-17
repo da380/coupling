@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # set the number of processors
-njob=32
+njob=1
 
 # set minimum and maximum frequency for the calculations (in mHz)
 fmin=0.1
 fmax=1.0
 
 # time step (seconds)
-tstep=50
+tstep=20
 
 # time length (hours)
-tend=50
+tend=256
 
 # frequency step (mHz)
 fstep=0.05
@@ -21,7 +21,7 @@ fblock=0.05
 
 # start and end times for Cosine Bell window (hours)
 wstart=0
-wend=50
+wend=256
 
 # source file
 source="dspec.source"
