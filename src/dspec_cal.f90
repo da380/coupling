@@ -231,26 +231,26 @@ program dspec_cal
 
 
   ! implement the kinetic and coriolis approximations
-!   if(ifcor == 1) then
-!      nindex = 0
-!      do im = 1,mtot
-!         do i = 1,2*ll(im)+1
-!            mindex = 0
-!            do im2 = 1,mtot
-!               w0 = 0.5_sp*real(ww(im)+ww(im2))
-!               do j = 1,2*ll(im2)+1
-!                  a0(nindex+i,mindex+j) = a0(nindex+i,mindex+j)      & 
-!                       +w0*a1(nindex+i,mindex+j)  & 
-!                       +w0*w0*a2(nindex+i,mindex+j)  
-!                  a1(nindex+i,mindex+j) = 0.0_dp
-!                  a2(nindex+i,mindex+j) = 0.0_dp
-!               end do
-!               mindex = mindex + 2*ll(im2)+1
-!            end do
-!         end do
-!         nindex = nindex + 2*ll(im)+1
-!      end do
-!   end if
+  if(ifcor == 1) then
+     nindex = 0
+     do im = 1,mtot
+        do i = 1,2*ll(im)+1
+           mindex = 0
+           do im2 = 1,mtot
+              w0 = 0.5_sp*real(ww(im)+ww(im2))
+              do j = 1,2*ll(im2)+1
+                 a0(nindex+i,mindex+j) = a0(nindex+i,mindex+j)      & 
+                      +w0*a1(nindex+i,mindex+j)  & 
+                      +w0*w0*a2(nindex+i,mindex+j)  
+                 a1(nindex+i,mindex+j) = 0.0_dp
+                 a2(nindex+i,mindex+j) = 0.0_dp
+              end do
+              mindex = mindex + 2*ll(im2)+1
+           end do
+        end do
+        nindex = nindex + 2*ll(im)+1
+     end do
+  end if
   
   
 

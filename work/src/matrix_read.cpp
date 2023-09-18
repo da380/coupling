@@ -47,6 +47,8 @@ main() {
     double t2 = 256.0;     // cosine bell stop (hrs)
     // freq_setup mytest(f1, f2, dt, tout, df0, wtb, t1, t2);
     // mytest(5);
+    // Get starting timepoint
+    auto start = high_resolution_clock::now();
     modespectra mymode(filePath, filePath2, filePath3, f1, f2, dt, tout, df0,
                        wtb, t1, t2);
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic> mytmp;
@@ -74,12 +76,26 @@ main() {
 
         myfile.open(outputfilename, std::ios::trunc);
         for (int idx = 0; idx < mymode.nt; ++idx) {
+            double tval = idx * mymode.dt/3600;
+            // if (tval < tout){
             myfile << mymode.dt * idx << ";" << mymode.tseis(oidx, idx)
                    << std::endl;
         }
         myfile.close();
     }
-
+    
+ 
+      // Get ending timepoint
+    auto stop = high_resolution_clock::now();
+ 
+    // Get duration. Substart timepoints to
+    // get duration. To cast it to proper unit
+    // use duration cast method
+    auto duration = duration_cast<microseconds>(stop - start);
+ 
+    std::cout << "Time taken by function: "
+         << duration.count()/1000000 << " seconds" << std::endl;
+return 0;
     // test spectra
     // testclass.fspectra(mytest.freq_value(1));
 }

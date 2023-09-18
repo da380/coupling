@@ -111,7 +111,7 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/adcm2/raidam/coupling/work/build/CMakeFiles/pkgRedirects
 
 //Fortran compiler
-CMAKE_Fortran_COMPILER:FILEPATH=/opt/gcc-13.1.0/bin/gfortran
+CMAKE_Fortran_COMPILER:STRING=/opt/gcc-13.1.0/bin/gfortran
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler

@@ -9,10 +9,10 @@ smin=0
 smax=20
 
 # rotation on == 1, off == 0
-rot=0
+rot=1
 
 # ellipticity on == 1, off = 0
-ell=0
+ell=1
 
 # set the name for the matrix file
 file="matrix.bin"

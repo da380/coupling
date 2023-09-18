@@ -172,7 +172,7 @@ open(io1, file = "testrawspec.out")
 3 format(i3,1x,a1,1x,i3,f16.8)  
   close(io1)
 
-
+  
 
   ! parameters for frequency-domain filter
   fac = 0.1_sp
@@ -186,7 +186,15 @@ open(io1, file = "testrawspec.out")
   do ir = 1,nr
      dat(ir,:) = acl(:,ir)
   end do
+! raw spectra
+  open(io1,file='drawspec') 
+  do i = i1,i2
+        f = (i-1)*df*1000.0_sp
+        samp = abs(dat(1,i))
+        write(io1,'(4e25.12e3)') f,real(dat(2,i)),imag(dat(2,i)),samp
+  end do
 
+  close(io1)
 
  
   ! filter the spectra
