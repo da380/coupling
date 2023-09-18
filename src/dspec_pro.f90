@@ -123,10 +123,17 @@ program dspec_pro
      close(io1)
     
   end do
+open(io1, file = "testrawspec.out")
+     do i = 1,size(acl,1)
+      !   f = (i-1)*df*1000.0_sp
+      !   samp = abs(dat(ir,i))
+        write(io1,'(4e25.12e3)') real(acl(i,1)),imag(acl(i,1)),abs(acl(i,1))
+     end do
 
+     close(io1)
 
   ! open the mode catalog
-  call openfl(7,'/home/da380/raid/coupling_standalone/data/SPRM1.BIN', & 
+  call openfl(7,'../data/SPRM1.BIN', & 
        1 ,0,0,istat,4096)
   
   ! set up mode catalog

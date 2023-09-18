@@ -70,10 +70,16 @@ program mdcpl
 !       //'|-pc:o:1:[default.pc] startup plotting commands'                        &
 !       //'|')
 
-  call chekcl('|-lu2:o:1:[/home/da380/raid/coupling_standalone/data/foanis05.222]'                   & 
+!   call chekcl('|-lu2:o:1:[/home/alex/Documents/c++/coupling/data/foanis05.222]'                   & 
+!        //'|-lu7:o:1:[mdcpl.out]'                                                                     &  
+!        //'|-lu3:o:1:[/home/alex/Documents/c++/coupling/data/m1084x2.htm] model on unit 3 (rdmdl)' & 
+!        //'|-model:o:1:[/home/alex/Documents/c++/coupling/data/S20RTS.sph] Model'                  & 
+!        //'|-pc:o:1:[default.pc] startup plotting commands'                                           &
+!        //'|')
+  call chekcl('|-lu2:o:1:[../data/foanis05.222]'                   & 
        //'|-lu7:o:1:[mdcpl.out]'                                                                     &  
-       //'|-lu3:o:1:[/home/da380/raid/coupling_standalone/data/m1084x2.htm] model on unit 3 (rdmdl)' & 
-       //'|-model:o:1:[/home/da380/raid/coupling_standalone/data/S20RTS.sph] Model'                  & 
+       //'|-lu3:o:1:[../data/m1084x2.htm] model on unit 3 (rdmdl)' & 
+       //'|-model:o:1:[../data/S20RTS.sph] Model'                  & 
        //'|-pc:o:1:[default.pc] startup plotting commands'                                           &
        //'|')
   
@@ -87,7 +93,7 @@ program mdcpl
 
   ! open the PREM mode catalogue
   
-  call openfl(1,'/home/da380/raid/coupling_standalone/data/PREM222.BIN',1,0,0,istat,5364)
+  call openfl(1,'../data/PREM222.BIN',1,0,0,istat,5364)
   call seteig(1)
 
 
@@ -265,11 +271,11 @@ program mdcpl
   write(35) a1(1:nelem,1:nelem)
   write(35) a2(1:nelem,1:nelem)
   close(35)
-  print *, a0(1:5,1)
-  print *, a1(1:5,1)
-  print *, a2(1:5,1)
-  print *, "hello"
-  print *, a1(nelem, nelem)
+  print *, a0(1:3,1)
+  print *, a1(1:3,1)
+  print *, a2(1:3,1)
+!   print *, "hello"
+!   print *, a1(nelem, nelem)
  
 !   open(35,file='matrixPd.dat',form='formatted')
 !   write(35,*) nelem

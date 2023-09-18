@@ -1,0 +1,3 @@
+/raid/adcm2/coupling/work/src/build/CMakeFiles/matrix_read.dir
+/raid/adcm2/coupling/work/src/build/CMakeFiles/edit_cache.dir
+/raid/adcm2/coupling/work/src/build/CMakeFiles/rebuild_cache.dir

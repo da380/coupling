@@ -5206,6 +5206,19 @@ demos/fast:
 .PHONY : demos/fast
 
 #=============================================================================
+# Target rules for targets named FFTWpp
+
+# Build rule for target.
+FFTWpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 FFTWpp
+.PHONY : FFTWpp
+
+# fast build rule for target.
+FFTWpp/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/fftwpp-build/CMakeFiles/FFTWpp.dir/build.make _deps/fftwpp-build/CMakeFiles/FFTWpp.dir/build
+.PHONY : FFTWpp/fast
+
+#=============================================================================
 # Target rules for targets named matrix_read
 
 # Build rule for target.
@@ -5247,6 +5260,7 @@ help:
 	@echo "... DenseBase_middleRows_int"
 	@echo "... DenseBase_template_int_middleCols"
 	@echo "... DenseBase_template_int_middleRows"
+	@echo "... FFTWpp"
 	@echo "... QuickStart_example"
 	@echo "... QuickStart_example2_dynamic"
 	@echo "... QuickStart_example2_fixed"

@@ -1,3 +1,6 @@
+#ifndef FREQ_HEADER_GUARD_H
+#define FREQ_HEADER_GUARD_H
+
 #include <math.h>
 
 #include <Eigen/Core>
@@ -10,6 +13,8 @@
 #include <string>
 #include <vector>
 
+#include "matrix_header.h"
+
 class freq_setup {
    public:
     // constructor
@@ -19,13 +24,17 @@ class freq_setup {
     double operator()(double);
 
     // frequency of particular point
-    std::complex<double> freq_value(int);
+    // std::complex<double> freq_value(int);
+    // Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>
+    // fspectra();
+
     // number of points
     int nt;
     int i1, i2;
+    double df, ep;
 
    private:
-    double f1, f2, dt, tout, df0, wtb, t1, t2, df, ep;
+    double f1, f2, dt, tout, df0, wtb, t1, t2;
 };
 
 freq_setup::freq_setup(double f1, double f2, double dt, double tout, double df0,
@@ -43,27 +52,35 @@ freq_setup::freq_setup(double f1, double f2, double dt, double tout, double df0,
         std::cout << "f2 is greater than the Nyquist frequency for the time "
                      "step. Behaviour may be unexpected"
                   << std::endl;
-        f2 = fn;
+        this->f2 = fn;
     };
     int mex = 5;
     int qex = 4;
 
-    ep = mex / tout;
+    ep = mex / freq_setup::tout;
 
     df = ep / (6.28318530718 * qex);
+    // std::cout << "df: " << df << std::endl;
+    // std::cout << "ep: " << ep << std::endl;
+    // std::cout << "dt: " << dt << std::endl;
+    // std::cout << "t/dt: " << freq_setup::tout / dt << std::endl;
 
     nt = std::ceil(1.0 / (df * dt));
-
-    int ne = static_cast<int>((static_cast<double>(nt)) / log(2.0) + 1);
+    std::cout << "nt: " << nt << std::endl;
+    int ne = static_cast<int>(log(static_cast<double>(nt)) / log(2.0) + 1);
+    std::cout << "ne: " << ne << std::endl;
     nt = pow(2, ne);
 
     df = 1.0 / (nt * dt);
 
-    i1 = std::max(static_cast<int>(std::floor(f1 / df)), 2);
-    f1 = (i1 - 1) * df;
+    i1 = std::max(static_cast<int>(std::floor(freq_setup::f1 / df)), 2);
+    freq_setup::f1 = (i1 - 1) * df;
+    std::cout << "nt: " << nt << std::endl;
+    std::cout << "f1: " << f1 << std::endl;
+    i2 = static_cast<int>(std::floor(freq_setup::f2 / df)) + 2;
 
-    i2 = static_cast<int>(std::floor(f2 / df)) + 2;
-    f2 = (i2 - 1) * df;
+    freq_setup::f2 = (i2 - 1) * df;
+    std::cout << freq_setup::f1 << " " << freq_setup::f2 << std::endl;
 };
 
 double
@@ -79,11 +96,21 @@ freq_setup::operator()(double x) {
     return x;
 };
 
-std::complex<double>
-freq_setup::freq_value(int n) {
-    using namespace std::complex_literals;
-    if (n > i2) {
-        std::cout << "n is too large\n" << std::endl;
-    };
-    return n * df + ep * 1i;
-};
+// Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>
+//         freq_setup::fspectra(){
+
+//         };
+
+// std::complex<double>
+// freq_setup::freq_value(int n) {
+//     using namespace std::complex_literals;
+//     // std::cout << i1 << " " << i2 << std::endl;
+//     if (n < i1) {
+//         return
+//     };
+//     if (n > i2) {
+//         std::cout << "n is too large\n" << std::endl;
+//     };
+//     return n * df + ep * 1i;
+// };
+#endif

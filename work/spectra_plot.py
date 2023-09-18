@@ -1,32 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-d = np.loadtxt('spectra.STAT1.Z')
-dp = np.loadtxt('spectra_small.STAT1.Z')
+d = np.loadtxt("spectra_test.STAT1.N")
 
 
-plt.rcParams.update({'font.size': 18})
+plt.rcParams.update({"font.size": 24})
 
-plt.figure()
+f = plt.figure()
 
-plt.plot(d[:,0],d[:,3],'k')
-plt.plot(dp[:,0],dp[:,3],'r--')
+plt.plot(d[:, 0], d[:, 3], "k")
+
 
 plt.gca().set_yticks([])
 plt.yticks([])
-plt.xlabel('frequency (mHz)')
-
-
-
+plt.xlabel("Frequency (mHz)")
 plt.show()
-
-
-
-
-    
-
-    
-
-
-
-

@@ -45,6 +45,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/adcm2/raidam/coupling/work/build/_deps/eigen3-build/cmake_install.cmake")
+  include("/home/adcm2/raidam/coupling/work/build/_deps/fftwpp-build/cmake_install.cmake")
   include("/home/adcm2/raidam/coupling/work/build/src/cmake_install.cmake")
 
 endif()

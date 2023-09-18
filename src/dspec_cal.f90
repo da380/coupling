@@ -127,12 +127,14 @@ program dspec_cal
   read(io1) a1
   read(io1) a2
   close(io1)
-  print *, a0(1:5,1:5)
+  print *, a0(1:2,1:2)
+  print *, a0(1:2,1:2)
+  print *, a0(1:2,1:2)
   print *, "hello"
 
   
   ! open the mode catalog
-  call openfl(7,'/home/da380/raid/coupling_standalone/data/SPRM1.BIN', & 
+  call openfl(7,'../data/SPRM1.BIN', & 
        1 ,0,0,istat,4096)
 
   ! set up mode catalog
@@ -190,6 +192,10 @@ program dspec_cal
   write(25) vs
   write(25) vr
   close(25)
+  open(55, file = "freq_sph.bin", form = "unformatted")
+  write(55) ww
+  write(55) ll
+  close(55)
 !   open(25, file = "vector_sr.out", status = "replace", form = "formatted")
 !   write(25) vs
 !   write(25) vr
@@ -220,31 +226,31 @@ program dspec_cal
   saved = 0
 
 
-  ! switch whether to use the use the corilis approximation
+  ! switch whether to use the use the coriolis approximation
   ifcor = 0
 
 
   ! implement the kinetic and coriolis approximations
-  if(ifcor == 1) then
-     nindex = 0
-     do im = 1,mtot
-        do i = 1,2*ll(im)+1
-           mindex = 0
-           do im2 = 1,mtot
-              w0 = 0.5_sp*real(ww(im)+ww(im2))
-              do j = 1,2*ll(im2)+1
-                 a0(nindex+i,mindex+j) = a0(nindex+i,mindex+j)      & 
-                      +w0*a1(nindex+i,mindex+j)  & 
-                      +w0*w0*a2(nindex+i,mindex+j)  
-                 a1(nindex+i,mindex+j) = 0.0_dp
-                 a2(nindex+i,mindex+j) = 0.0_dp
-              end do
-              mindex = mindex + 2*ll(im2)+1
-           end do
-        end do
-        nindex = nindex + 2*ll(im)+1
-     end do
-  end if
+!   if(ifcor == 1) then
+!      nindex = 0
+!      do im = 1,mtot
+!         do i = 1,2*ll(im)+1
+!            mindex = 0
+!            do im2 = 1,mtot
+!               w0 = 0.5_sp*real(ww(im)+ww(im2))
+!               do j = 1,2*ll(im2)+1
+!                  a0(nindex+i,mindex+j) = a0(nindex+i,mindex+j)      & 
+!                       +w0*a1(nindex+i,mindex+j)  & 
+!                       +w0*w0*a2(nindex+i,mindex+j)  
+!                  a1(nindex+i,mindex+j) = 0.0_dp
+!                  a2(nindex+i,mindex+j) = 0.0_dp
+!               end do
+!               mindex = mindex + 2*ll(im2)+1
+!            end do
+!         end do
+!         nindex = nindex + 2*ll(im)+1
+!      end do
+!   end if
   
   
 
