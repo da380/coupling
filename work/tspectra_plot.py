@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-d = np.loadtxt("tspectratest.out", delimiter=";")
+d = np.loadtxt("tspectra.r1.out", delimiter=";")
 # d2 = np.loadtxt('time_norot.STAT1.Z')
 
 # Initialise the subplot function using number of rows and columns
