@@ -70,10 +70,16 @@ program mdcpl
 !       //'|-pc:o:1:[default.pc] startup plotting commands'                        &
 !       //'|')
 
-  call chekcl('|-lu2:o:1:[/home/alex/Documents/c++/coupling/data/foanis05.222]'                   & 
+!   call chekcl('|-lu2:o:1:[/home/alex/Documents/c++/coupling/data/foanis05.222]'                   & 
+!        //'|-lu7:o:1:[mdcpl.out]'                                                                     &  
+!        //'|-lu3:o:1:[/home/alex/Documents/c++/coupling/data/m1084x2.htm] model on unit 3 (rdmdl)' & 
+!        //'|-model:o:1:[/home/alex/Documents/c++/coupling/data/S20RTS.sph] Model'                  & 
+!        //'|-pc:o:1:[default.pc] startup plotting commands'                                           &
+!        //'|')
+  call chekcl('|-lu2:o:1:[../data/foanis05.222]'                   & 
        //'|-lu7:o:1:[mdcpl.out]'                                                                     &  
-       //'|-lu3:o:1:[/home/alex/Documents/c++/coupling/data/m1084x2.htm] model on unit 3 (rdmdl)' & 
-       //'|-model:o:1:[/home/alex/Documents/c++/coupling/data/S20RTS.sph] Model'                  & 
+       //'|-lu3:o:1:[../data/m1084x2.htm] model on unit 3 (rdmdl)' & 
+       //'|-model:o:1:[../data/S20RTS.sph] Model'                  & 
        //'|-pc:o:1:[default.pc] startup plotting commands'                                           &
        //'|')
   
@@ -87,7 +93,7 @@ program mdcpl
 
   ! open the PREM mode catalogue
   
-  call openfl(1,'/home/alex/Documents/c++/coupling/data/PREM222.BIN',1,0,0,istat,5364)
+  call openfl(1,'../data/PREM222.BIN',1,0,0,istat,5364)
   call seteig(1)
 
 

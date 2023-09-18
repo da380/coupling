@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/Documents/c++/coupling/work/build/_deps/eigen3-src/unsupported/Eigen/CXX11
+# Install script for directory: /home/adcm2/raidam/coupling/work/build/_deps/eigen3-src/unsupported/Eigen/CXX11
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -42,15 +42,15 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xDevelx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Devel" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/eigen3/unsupported/Eigen/CXX11" TYPE FILE FILES
-    "/home/alex/Documents/c++/coupling/work/build/_deps/eigen3-src/unsupported/Eigen/CXX11/Tensor"
-    "/home/alex/Documents/c++/coupling/work/build/_deps/eigen3-src/unsupported/Eigen/CXX11/TensorSymmetry"
-    "/home/alex/Documents/c++/coupling/work/build/_deps/eigen3-src/unsupported/Eigen/CXX11/ThreadPool"
+    "/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src/unsupported/Eigen/CXX11/Tensor"
+    "/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src/unsupported/Eigen/CXX11/TensorSymmetry"
+    "/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src/unsupported/Eigen/CXX11/ThreadPool"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xDevelx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/eigen3/unsupported/Eigen/CXX11" TYPE DIRECTORY FILES "/home/alex/Documents/c++/coupling/work/build/_deps/eigen3-src/unsupported/Eigen/CXX11/src" FILES_MATCHING REGEX "/[^/]*\\.h$")
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Devel" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/eigen3/unsupported/Eigen/CXX11" TYPE DIRECTORY FILES "/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src/unsupported/Eigen/CXX11/src" FILES_MATCHING REGEX "/[^/]*\\.h$")
 endif()
 

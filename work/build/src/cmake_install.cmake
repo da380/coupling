@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/Documents/c++/coupling/work/src
+# Install script for directory: /home/adcm2/raidam/coupling/work/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

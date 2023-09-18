@@ -1,21 +1,21 @@
-set(CMAKE_Fortran_COMPILER "CMAKE_Fortran_COMPILER-NOTFOUND")
+set(CMAKE_Fortran_COMPILER "/opt/gcc-13.1.0/bin/gfortran")
 set(CMAKE_Fortran_COMPILER_ARG1 "")
-set(CMAKE_Fortran_COMPILER_ID "")
-set(CMAKE_Fortran_COMPILER_VERSION "")
+set(CMAKE_Fortran_COMPILER_ID "GNU")
+set(CMAKE_Fortran_COMPILER_VERSION "13.1.0")
 set(CMAKE_Fortran_COMPILER_WRAPPER "")
 set(CMAKE_Fortran_PLATFORM_ID "")
 set(CMAKE_Fortran_SIMULATE_ID "")
-set(CMAKE_Fortran_COMPILER_FRONTEND_VARIANT "")
+set(CMAKE_Fortran_COMPILER_FRONTEND_VARIANT "GNU")
 set(CMAKE_Fortran_SIMULATE_VERSION "")
 
 
 
 
 set(CMAKE_AR "/usr/bin/ar")
-set(CMAKE_Fortran_COMPILER_AR "")
+set(CMAKE_Fortran_COMPILER_AR "/opt/gcc-13.1.0/bin/gcc-ar")
 set(CMAKE_RANLIB "/usr/bin/ranlib")
-set(CMAKE_Fortran_COMPILER_RANLIB "")
-set(CMAKE_COMPILER_IS_GNUG77 )
+set(CMAKE_Fortran_COMPILER_RANLIB "/opt/gcc-13.1.0/bin/gcc-ranlib")
+set(CMAKE_COMPILER_IS_GNUG77 1)
 set(CMAKE_Fortran_COMPILER_LOADED 1)
 set(CMAKE_Fortran_COMPILER_WORKS )
 set(CMAKE_Fortran_ABI_COMPILED )

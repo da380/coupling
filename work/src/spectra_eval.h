@@ -34,16 +34,25 @@ class modespectra {
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> finv(
         std::complex<double>);
 
+    // postprocessing
+    Eigen::Matrix<double, 1, Eigen::Dynamic>
+        postprocess(
+            Eigen::Matrix<std::complex<double>, 1, Eigen::Dynamic>);
+            Eigen::Matrix<std::complex<double>, 1, Eigen::Dynamic>
+postprocessf(Eigen::Matrix<double, 1, Eigen::Dynamic>);
+
     // number of points
     int nt;
     int i1, i2, mtot;
     double df, ep;
     std::vector<double> w;
     std::vector<double> t;
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic> fspec;
+    Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic> tseis;
 
    private:
-    double f1, f2, dt, tout, df0, wtb, t1, t2;
-
+    double f1, f2, dt, tout, df0, wtb, t1, t2, nt0,df2;
+    int i12, i22;
     using myvector = Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1>;
     using mymatrix =
         Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>;
@@ -110,7 +119,19 @@ modespectra::modespectra(std::string filepath, std::string filePath2, double f1,
     for (int idx = 0; idx < nt; ++idx) {
         t.push_back(dt * static_cast<double>(idx));
     }
+ this->nt0 = floor(1.0 / this->df0 * this->dt);
+    if (this->nt0 > this->nt) {
+        int ne2 = log(static_cast<double>(this->nt0)) / log(2.0) + 1;
+        this->nt0 = pow(2, ne2);
+    } else {
+        this->nt0 = this->nt;
+    }
 
+    df2 = 1.0 / (nt0 * dt);
+    i12 = std::max(static_cast<int>(floor(this->f1 / df2)), 1);
+    i22 = static_cast<int>(floor(this->f2 / df2)) + 1;
+
+    std::cout<< "nt: " << nt << ", nt0: " << nt0 << std::endl;
     //////////////////////////////////////////////////////////////////////////
     ///////////////      file opening and initialisation       ///////////////
     //////////////////////////////////////////////////////////////////////////
@@ -213,10 +234,10 @@ modespectra::modespectra(std::string filepath, std::string filePath2, double f1,
     //////////////////////////////////////////////////////////////////////////
     ///////////////      file opening and initialisation       ///////////////
     //////////////////////////////////////////////////////////////////////////
-    // ifstream freqfile("/home/adcm2/raidam/coupling/work/freq_sph.bin",
-    //                   ifstream::binary);
-    ifstream freqfile("/home/alex/Documents/c++/coupling/work/freq_sph.bin",
+    ifstream freqfile("/home/adcm2/raidam/coupling/work/freq_sph.bin",
                       ifstream::binary);
+    // ifstream freqfile("../freq_sph.bin",
+                    //   ifstream::binary);
     // check opened correctly
     if (!freqfile) {
         cout << "Cannot open file!" << endl;
@@ -325,9 +346,10 @@ modespectra::rawspectra() {
     return tmp;
 };
 
-Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>
-modespectra::fspectra() {
-    // do Fourier transform
+Eigen::Matrix<double, 1, Eigen::Dynamic>
+modespectra::postprocess(Eigen::Matrix<std::complex<double>, 1, Eigen::Dynamic>
+                             rawspec) {   // do Fourier transform
+                            
     using Float = double;
     using Complex = std::complex<Float>;
     using RealVector = FFTWpp::vector<Float>;
@@ -335,7 +357,7 @@ modespectra::fspectra() {
     using namespace std::complex_literals;
 
     // set up for FT
-    // int n = 2 * (nt - 1);
+
     RealVector testFL(nt), checkFL(nt);
     ComplexVector outFL(nt / 2 + 1);
 
@@ -343,10 +365,10 @@ modespectra::fspectra() {
     auto flag = FFTWpp::Measure | FFTWpp::Estimate;
 
     auto backward_plan = FFTWpp::MakePlan1D(outFL, checkFL, flag);
-    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic> rawspec,
-        tmpspec;
-    rawspec = modespectra::rawspectra();
-    tmpspec.resize(this->nelem2 + 1, this->nt / 2 + 1);
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> tmpspec;
+    Eigen::Matrix<double, 1, Eigen::Dynamic> vecout;
+
+    tmpspec.resize(this->nt / 2 + 1,1);
 
     // set up Hann filter
     double fac = 0.1;
@@ -355,23 +377,12 @@ modespectra::fspectra() {
     double f12 = f11 + fac * (f22 - f11);
     double f21 = f22 - fac * (f22 - f11);
 
-    // do Hann filter
-    for (int idx = 0; idx < this->nt / 2 + 1; ++idx) {
+    // fill out for FT
+    for (int idx = 0; idx < nt / 2 + 1; ++idx) {
         // actual frequency
         double finp;
         finp = static_cast<double>(idx) * this->df;
-
-        tmpspec(0, idx) = rawspec(0, idx);   // frequency output not filtered
-
-        // filter spectra
-        tmpspec.block(1, idx, this->nelem2, 1) =
-            rawspec.block(1, idx, this->nelem2, 1) *
-            filters::hann(&finp, &f11, &f12, &f21, &f22);
-    }
-
-    // fill out for FT
-    for (int idx = 0; idx < nt / 2 + 1; ++idx) {
-        outFL[idx] = tmpspec(3, idx);
+        outFL[idx] = rawspec(0,idx) * filters::hann(&finp, &f11, &f12, &f21, &f22);
     }
 
     // execute FT
@@ -386,34 +397,30 @@ modespectra::fspectra() {
 
     // do corrections
     auto myit2 = checkFL.begin();
-    // auto myit3 = t.begin();
-    for (int idx = 0; idx < nt; ++idx) {
-        double tinp;
+
+
+//output
+vecout.resize(1,nt);
+for (int idx = 0; idx < nt; ++idx){
+            double tinp;
         tinp = static_cast<double>(idx) * dt;
-        myit2[idx] = myit2[idx] * exp(this->ep * t[idx]) * df *
+    vecout(0,idx) = myit2[idx] * exp(this->ep * t[idx]) * df *
                      filters::hann(&tinp, &t11, &t12, &t21, &t22);
-    }
+}
+    return vecout;
+};
 
-    // output
-    std::ofstream myfile;
-    myfile.open("tspectratest.out", std::ios::trunc);
-    for (int idx = 0; idx < nt; ++idx) {
-        myfile << t[idx] / 3600 << ";" << myit2[idx] << std::endl;
-    }
-    myfile.close();
-
-    // put into Eigen matrix
-    Eigen::Matrix<double, Eigen::Dynamic, 1> eigtmp;
-    eigtmp.resize(nt);
-    for (int idx = 0; idx < nt; ++idx) {
-        eigtmp(idx, 0) = myit2[idx];
-    }
-    // pad the time series if necessary
-    double nt0 = floor(1.0 / df0 * dt);
-    if (nt0 > nt) {
-        int ne2 = log(static_cast<double>(nt0)) / log(2.0) + 1;
-        nt0 = pow(2, ne2);
-    }
+Eigen::Matrix<std::complex<double>, 1, Eigen::Dynamic>
+modespectra::postprocessf(Eigen::Matrix<double, 1, Eigen::Dynamic>
+                             rawspec) {
+                                
+                                
+using Float = double;
+    using Complex = std::complex<Float>;
+    using RealVector = FFTWpp::vector<Float>;
+    using ComplexVector = FFTWpp::vector<Complex>;
+    using namespace std::complex_literals;
+    
     RealVector dtmp(nt0);
     ComplexVector wdense(nt0 / 2 + 1);
     auto flag2 = FFTWpp::Measure | FFTWpp::Estimate;
@@ -422,30 +429,64 @@ modespectra::fspectra() {
 
     auto forward_plan = FFTWpp::Plan(inView, outView, flag2);
 
-    // auto backward_plan2 = FFTWpp::MakePlan1D(wdense, dtmp, flag2);
+
     auto myit4 = dtmp.begin();
     for (int idx = 0; idx < nt; ++idx) {
-        myit4[idx] = eigtmp(idx, 0);
+        myit4[idx] = rawspec(0,idx);
     }
     if (nt0 > nt) {
         for (int idx = nt; idx < nt0; ++idx) {
             myit4[idx] = 0.0;
         }
     }
+
+
     forward_plan.Execute();
-    auto df2 = 1.0 / (nt0 * dt);
-    auto i12 = std::max(static_cast<int>(floor(this->f1 / df2)), 1);
-    auto i22 = static_cast<int>(floor(this->f2 / df2)) + 1;
+    
     auto myit5 = wdense.begin();
+Eigen::Matrix<std::complex<double>, 1, Eigen::Dynamic> tmp;
+tmp.resize(1,nt0/2+1);
+for (int idx = 0; idx < nt0/2+1; ++idx){
+    tmp(0,idx) = myit5[idx];
+}
+    
+                           return tmp;  };
+
+
+Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>
+modespectra::fspectra() {
+    // do Fourier transform
+    using Float = double;
+    using Complex = std::complex<Float>;
+    using RealVector = FFTWpp::vector<Float>;
+    using ComplexVector = FFTWpp::vector<Complex>;
+    using namespace std::complex_literals;
+
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic> rawspec;
+    rawspec = modespectra::rawspectra();
+
+
+//find seismogram
+this->tseis.resize(this->nelem2,nt);
+for (int idx = 0; idx < 3; ++idx){
+this->tseis.block(idx,0,1,this->nt) = modespectra::postprocess(rawspec.block(1 + idx,0,1,nt/2+1));
+}
+
+//frequency spectra
+this->fspec.resize(this->nelem2,nt0/2+1);
+for (int idx = 0;idx < 3; ++idx){
+this->fspec.block(idx,0,1,this->nt0/2+1) = modespectra::postprocessf(this->tseis.block(idx,0,1,this->nt));
+}
+
     std::ofstream specout;
     specout.open("fspectra.out", std::ios::trunc);
-    for (int idx = i12; idx < i22; ++idx) {
-        specout << df2 * idx * 1000.0 << ";" << myit5[idx].real() * dt << ";"
-                << myit5[idx].imag() * dt << ";" << std::abs(myit5[idx]) * dt
+    for (int idx = 0; idx < nt0/2+1; ++idx) {
+        specout << df2 * idx * 1000.0 << ";" << this->fspec(0,idx).real() * dt << ";"
+                << this->fspec(0,idx).imag() * dt << ";" << std::abs(this->fspec(0,idx)) * dt
                 << std::endl;
     }
     specout.close();
-    return tmpspec;
+    return this->fspec;
     // return 0;
 };
 

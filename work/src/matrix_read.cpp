@@ -23,28 +23,28 @@ using namespace std::chrono;
 
 int
 main() {
-    // std::string filePath =
-    //     "/home/adcm2/raidam/coupling/"
-    //     "work/matrix.bin";
-    std::string filePath = "/home/alex/Documents/c++/coupling/work/matrix.bin";
+    std::string filePath =
+        "/home/adcm2/raidam/coupling/"
+        "work/matrix.bin";
+    // std::string filePath = "../matrix.bin";
 
     // std::string filePath =
     // "/home/adcm2/Documents/coupling_codes/coupling/work/matrix.bin";
     // std::string filePath2 =
     // "/home/adcm2/Documents/coupling_codes/coupling/work/vector_sr.bin";
-    // std::string filePath2 = "/home/adcm2/raidam/coupling/work/vector_sr.bin";
-    std::string filePath2 =
-        "/home/alex/Documents/c++/coupling/work/vector_sr.bin";
+    std::string filePath2 = "/home/adcm2/raidam/coupling/work/vector_sr.bin";
+    // std::string filePath2 =
+    //     "../vector_sr.bin";
 
     // modematrix testclass(filePath);
     double f1 = 0.1;       // minimum (mHz)
     double f2 = 1.0;       // maximum (mHz)
-    double dt = 20.0;      // timestep (s)
-    double tout = 256.0;   // time length (hrs)
+    double dt = 50.0;      // timestep (s)
+    double tout = 50.0;   // time length (hrs)
     double df0 = 0.05;     // frequency step (mHz)
     double wtb = 0.05;     // width of target block (mHz)
     double t1 = 0.0;       // cosine bell start (hrs)
-    double t2 = 256.0;     // cosine bell stop (hrs)
+    double t2 = 50.0;     // cosine bell stop (hrs)
     // freq_setup mytest(f1, f2, dt, tout, df0, wtb, t1, t2);
     // mytest(5);
     modespectra mymode(filePath, filePath2, f1, f2, dt, tout, df0, wtb, t1, t2);

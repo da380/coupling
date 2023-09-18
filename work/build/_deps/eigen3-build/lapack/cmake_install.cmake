@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/Documents/c++/coupling/work/build/_deps/eigen3-src/lapack
+# Install script for directory: /home/adcm2/raidam/coupling/work/build/_deps/eigen3-src/lapack
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
