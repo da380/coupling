@@ -99,7 +99,7 @@ modespectra::modespectra(std::string filepath, std::string filePath2,
     // my version
     df = 1.0 / this->tout;             // find df
     nt = std::ceil(1.0 / (df * dt));   // find nt
-    int ne = static_cast<int>(log(static_cast<double>(nt)) / log(2.0) + 1);
+    int ne = static_cast<int>(log(static_cast<double>(nt)) / log(2.0) + 3);
     nt = pow(2, ne);   // finish increase in density
 
     df = 1.0 / (nt * dt);   // new df
