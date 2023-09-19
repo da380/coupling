@@ -1,1 +1,1 @@
-/usr/bin/g++ -g -rdynamic CMakeFiles/matrix_read.dir/matrix_read.cpp.o -o matrix_read  -lEigen3::Eigen -lFFTWpp 
+/usr/bin/g++ -g -rdynamic CMakeFiles/matrix_read.dir/matrix_read.o -o matrix_read  -lEigen3::Eigen -lFFTWpp -lgomp -lpthread 

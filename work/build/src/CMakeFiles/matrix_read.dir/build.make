@@ -95,6 +95,8 @@ bin/matrix_read: src/CMakeFiles/matrix_read.dir/build.make
 bin/matrix_read: /usr/lib/x86_64-linux-gnu/libfftw3.so
 bin/matrix_read: /usr/lib/x86_64-linux-gnu/libfftw3f.so
 bin/matrix_read: /usr/lib/x86_64-linux-gnu/libfftw3l.so
+bin/matrix_read: /opt/gcc-13.1.0/lib64/libgomp.so
+bin/matrix_read: /usr/lib/x86_64-linux-gnu/libpthread.so
 bin/matrix_read: src/CMakeFiles/matrix_read.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/adcm2/raidam/coupling/work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/matrix_read"
 	cd /home/adcm2/raidam/coupling/work/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/matrix_read.dir/link.txt --verbose=$(VERBOSE)

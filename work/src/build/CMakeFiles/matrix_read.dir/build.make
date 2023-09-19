@@ -69,29 +69,31 @@ include CMakeFiles/matrix_read.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/matrix_read.dir/flags.make
 
-CMakeFiles/matrix_read.dir/matrix_read.cpp.o: CMakeFiles/matrix_read.dir/flags.make
-CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /raid/adcm2/coupling/work/src/matrix_read.cpp
-CMakeFiles/matrix_read.dir/matrix_read.cpp.o: CMakeFiles/matrix_read.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/raid/adcm2/coupling/work/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/matrix_read.dir/matrix_read.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/matrix_read.dir/matrix_read.cpp.o -MF CMakeFiles/matrix_read.dir/matrix_read.cpp.o.d -o CMakeFiles/matrix_read.dir/matrix_read.cpp.o -c /raid/adcm2/coupling/work/src/matrix_read.cpp
+CMakeFiles/matrix_read.dir/matrix_read.o: CMakeFiles/matrix_read.dir/flags.make
+CMakeFiles/matrix_read.dir/matrix_read.o: /raid/adcm2/coupling/work/src/matrix_read.cpp
+CMakeFiles/matrix_read.dir/matrix_read.o: CMakeFiles/matrix_read.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/raid/adcm2/coupling/work/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/matrix_read.dir/matrix_read.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/matrix_read.dir/matrix_read.o -MF CMakeFiles/matrix_read.dir/matrix_read.o.d -o CMakeFiles/matrix_read.dir/matrix_read.o -c /raid/adcm2/coupling/work/src/matrix_read.cpp
 
-CMakeFiles/matrix_read.dir/matrix_read.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/matrix_read.dir/matrix_read.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /raid/adcm2/coupling/work/src/matrix_read.cpp > CMakeFiles/matrix_read.dir/matrix_read.cpp.i
+CMakeFiles/matrix_read.dir/matrix_read.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/matrix_read.dir/matrix_read.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /raid/adcm2/coupling/work/src/matrix_read.cpp > CMakeFiles/matrix_read.dir/matrix_read.i
 
-CMakeFiles/matrix_read.dir/matrix_read.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/matrix_read.dir/matrix_read.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /raid/adcm2/coupling/work/src/matrix_read.cpp -o CMakeFiles/matrix_read.dir/matrix_read.cpp.s
+CMakeFiles/matrix_read.dir/matrix_read.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/matrix_read.dir/matrix_read.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /raid/adcm2/coupling/work/src/matrix_read.cpp -o CMakeFiles/matrix_read.dir/matrix_read.s
 
 # Object files for target matrix_read
 matrix_read_OBJECTS = \
-"CMakeFiles/matrix_read.dir/matrix_read.cpp.o"
+"CMakeFiles/matrix_read.dir/matrix_read.o"
 
 # External object files for target matrix_read
 matrix_read_EXTERNAL_OBJECTS =
 
-matrix_read: CMakeFiles/matrix_read.dir/matrix_read.cpp.o
+matrix_read: CMakeFiles/matrix_read.dir/matrix_read.o
 matrix_read: CMakeFiles/matrix_read.dir/build.make
+matrix_read: /usr/lib/gcc/x86_64-linux-gnu/7/libgomp.so
+matrix_read: /usr/lib/x86_64-linux-gnu/libpthread.so
 matrix_read: CMakeFiles/matrix_read.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/raid/adcm2/coupling/work/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable matrix_read"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/matrix_read.dir/link.txt --verbose=$(VERBOSE)

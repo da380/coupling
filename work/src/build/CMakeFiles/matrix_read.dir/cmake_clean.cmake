@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/matrix_read.dir/matrix_read.cpp.o"
-  "CMakeFiles/matrix_read.dir/matrix_read.cpp.o.d"
+  "CMakeFiles/matrix_read.dir/matrix_read.o"
+  "CMakeFiles/matrix_read.dir/matrix_read.o.d"
   "matrix_read"
   "matrix_read.pdb"
 )

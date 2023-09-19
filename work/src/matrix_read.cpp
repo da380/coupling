@@ -94,7 +94,7 @@ main() {
     auto duration = duration_cast<microseconds>(stop - start);
  
     std::cout << "Time taken by function: "
-         << duration.count()/1000000 << " seconds" << std::endl;
+         << duration.count()/1000000.0 << " seconds" << std::endl;
 return 0;
     // test spectra
     // testclass.fspectra(mytest.freq_value(1));

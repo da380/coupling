@@ -31,7 +31,7 @@ f = plt.figure()
 # plt.subplot(3,1,3)
 # plt.plot(d[1:len(d), 0], abs(dp[:, 3] - d[1:len(d),3]), "r")
 
-plt.subplot(2,1,1)
+# plt.subplot(2,1,1)
 plt.plot(d[:, 0], d[:, 3], "k")
 plt.plot(dp[:, 0], dp[:, 3], "r")
 plt.legend(['Fortran', 'C++'])
@@ -50,8 +50,14 @@ plt.legend(['Fortran', 'C++'])
 # plt.plot(d[1:len(d), 0], dout, "r")
 # plt.title('"Relative" difference')
 
-plt.subplot(2,1,2)
-plt.plot(d[1:len(d), 0], abs(dp[:, 3] - d[1:len(d),3]), "r")
+
+
+# plt.subplot(2,1,2)
+# plt.plot(d[1:len(d), 0], abs(dp[:, 3] - d[1:len(d),3]), "r")
+
+
+
+
 # plt.plot(d[1:len(d), 0], dout, "r")
 # plt.title('Absolute difference')
 

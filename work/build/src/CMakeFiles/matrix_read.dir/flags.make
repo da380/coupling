@@ -4,7 +4,7 @@
 # compile CXX with /opt/gcc-13.1.0/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src -isystem /home/adcm2/Documents/cppsimplecodes/later_chapters/build/_deps/eigen3-src
+CXX_INCLUDES = -I/home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src -isystem /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src
 
-CXX_FLAGS = -std=gnu++20
+CXX_FLAGS = -O3 -DNDEBUG -std=gnu++20 -fopenmp
 

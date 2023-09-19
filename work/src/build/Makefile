@@ -129,29 +129,20 @@ matrix_read/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_read.dir/build.make CMakeFiles/matrix_read.dir/build
 .PHONY : matrix_read/fast
 
-matrix_read.o: matrix_read.cpp.o
+# target to build an object file
+matrix_read.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_read.dir/build.make CMakeFiles/matrix_read.dir/matrix_read.o
 .PHONY : matrix_read.o
 
-# target to build an object file
-matrix_read.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_read.dir/build.make CMakeFiles/matrix_read.dir/matrix_read.cpp.o
-.PHONY : matrix_read.cpp.o
-
-matrix_read.i: matrix_read.cpp.i
+# target to preprocess a source file
+matrix_read.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_read.dir/build.make CMakeFiles/matrix_read.dir/matrix_read.i
 .PHONY : matrix_read.i
 
-# target to preprocess a source file
-matrix_read.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_read.dir/build.make CMakeFiles/matrix_read.dir/matrix_read.cpp.i
-.PHONY : matrix_read.cpp.i
-
-matrix_read.s: matrix_read.cpp.s
-.PHONY : matrix_read.s
-
 # target to generate assembly for a file
-matrix_read.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_read.dir/build.make CMakeFiles/matrix_read.dir/matrix_read.cpp.s
-.PHONY : matrix_read.cpp.s
+matrix_read.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_read.dir/build.make CMakeFiles/matrix_read.dir/matrix_read.s
+.PHONY : matrix_read.s
 
 # Help Target
 help:

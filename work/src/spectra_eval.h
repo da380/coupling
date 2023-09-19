@@ -99,7 +99,7 @@ modespectra::modespectra(std::string filepath, std::string filePath2,
     // my version
     df = 1.0 / this->tout;             // find df
     nt = std::ceil(1.0 / (df * dt));   // find nt
-    int ne = static_cast<int>(log(static_cast<double>(nt)) / log(2.0) + 3);
+    int ne = static_cast<int>(log(static_cast<double>(nt)) / log(2.0) + 1);
     nt = pow(2, ne);   // finish increase in density
 
     df = 1.0 / (nt * dt);   // new df
@@ -299,20 +299,26 @@ modespectra::finv(std::complex<double> winp) {
         Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>,
         Eigen::DiagonalPreconditioner<std::complex<double> > >
         solver;
+        
     solver.setTolerance(1.0 * std::pow(10, -5));
     solver.compute(A);
 
     // solution and rhs
-    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> x, vrhs;
+    Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> x, vrhs, x0;
     vrhs.resize(nelem);
+    x0.resize(nelem);
 
     // find rhs
     for (int idx = 0; idx < nelem; ++idx) {
         vrhs(idx) = vs(idx) / (myi * winp);
+        x0(idx) = vrhs(idx)/A(idx,idx);
     }
 
     // solve and return
-    x = solver.solve(vrhs);
+    // x = solver.solve(vrhs);
+    x = solver.solveWithGuess(vrhs,x0);
+    if (solver.iterations()>3){
+    std::cout << "#iterations:     " << solver.iterations() << std::endl;}
     return x;
 };
 
@@ -328,6 +334,7 @@ modespectra::rawspectra() {
 
     // go through frequencies:
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> vlhs;
+    // #pragma omp parallel for
     for (int idx = 0; idx < nt / 2 + 1; ++idx) {
         tmp(0, idx) = w[idx] * oneovertwopi;   // frequency
         std::complex<double> winp;             // imaginary shifted frequency
