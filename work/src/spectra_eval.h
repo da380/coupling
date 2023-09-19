@@ -306,7 +306,7 @@ modespectra::finv(std::complex<double> winp) {
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> x, vrhs;
     vrhs.resize(nelem);
 
-//find rhs
+    // find rhs
     for (int idx = 0; idx < nelem; ++idx) {
         vrhs(idx) = vs(idx) / (myi * winp);
     }
@@ -389,8 +389,6 @@ modespectra::postprocess(Eigen::Matrix<std::complex<double>, 1, Eigen::Dynamic>
     // execute FT
     backward_plan.Execute();
 
-    
-
     // do corrections
     auto myit2 = checkFL.begin();
 
@@ -399,8 +397,9 @@ modespectra::postprocess(Eigen::Matrix<std::complex<double>, 1, Eigen::Dynamic>
     for (int idx = 0; idx < nt; ++idx) {
         double tinp;
         tinp = static_cast<double>(idx) * dt;
-        if (tinp < this->tout){
-        vecout(0, idx) = myit2[idx] * exp(this->ep * t[idx]) * df;}
+        if (tinp < this->tout) {
+            vecout(0, idx) = myit2[idx] * exp(this->ep * t[idx]) * df;
+        }
     }
     return vecout;
 };
@@ -432,7 +431,8 @@ modespectra::postprocessf(Eigen::Matrix<double, 1, Eigen::Dynamic> rawspec) {
     for (int idx = 0; idx < nt; ++idx) {
         double tinp;
         tinp = static_cast<double>(idx) * dt;
-        myit4[idx] = rawspec(0, idx) * filters::hann(&tinp, &t11, &t12, &t21, &t22) ;
+        myit4[idx] =
+            rawspec(0, idx) * filters::hann(&tinp, &t11, &t12, &t21, &t22);
     }
     if (nt0 > nt) {
         for (int idx = nt; idx < nt0; ++idx) {
@@ -465,18 +465,16 @@ modespectra::fspectra() {
     rawspec = modespectra::rawspectra();
 
     // raw output
-std::ofstream myfile;
-    
-    
-        myfile.open("frawspec.out", std::ios::trunc);
-        for (int idx = i1-1; idx < i2+1; ++idx) {
-            myfile <<df * idx * 1000.0 << ";"
-                   << rawspec(1, idx).real() << ";"
-                   << rawspec(1, idx).imag()<< ";"
-                   << std::abs(rawspec(1, idx)) << std::endl;
-        }
-        myfile.close();
-    
+    std::ofstream myfile;
+
+    myfile.open("frawspec.out", std::ios::trunc);
+    for (int idx = i1 - 1; idx < i2 + 1; ++idx) {
+        myfile << df * idx * 1000.0 << ";" << rawspec(1, idx).real() << ";"
+               << rawspec(1, idx).imag() << ";" << std::abs(rawspec(1, idx))
+               << std::endl;
+    }
+    myfile.close();
+
     // find seismogram
     this->tseis.resize(this->nelem2, nt);
     for (int idx = 0; idx < 3; ++idx) {
