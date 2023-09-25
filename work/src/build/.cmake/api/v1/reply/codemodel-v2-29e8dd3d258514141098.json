@@ -11,7 +11,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -26,7 +27,8 @@
 					"name" : "Project",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -37,6 +39,13 @@
 					"id" : "matrix_read::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-matrix_read-Debug-d2afe03260a692d9601a.json",
 					"name" : "matrix_read",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-accb51c894dd84a74d08.json",
+					"name" : "test",
 					"projectIndex" : 0
 				}
 			]

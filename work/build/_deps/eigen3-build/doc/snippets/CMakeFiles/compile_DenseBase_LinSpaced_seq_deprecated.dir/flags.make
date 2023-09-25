@@ -6,5 +6,5 @@ CXX_DEFINES = -DEIGEN_MAKING_DOCS
 
 CXX_INCLUDES = -I/home/adcm2/raidam/coupling/work/build/_deps/eigen3-src
 
-CXX_FLAGS =  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -O1 -g1 -g -std=gnu++20 -DEIGEN_NO_DEPRECATED_WARNING
+CXX_FLAGS =  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -O1 -g1 -O3 -DNDEBUG -std=gnu++20 -DEIGEN_NO_DEPRECATED_WARNING
 

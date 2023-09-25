@@ -175,6 +175,20 @@ matrix_read/fast:
 	cd /home/adcm2/raidam/coupling/work/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/matrix_read.dir/build.make src/CMakeFiles/matrix_read.dir/build
 .PHONY : matrix_read/fast
 
+# Convenience name for target.
+src/CMakeFiles/test.dir/rule:
+	cd /home/adcm2/raidam/coupling/work/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/test.dir/rule
+.PHONY : src/CMakeFiles/test.dir/rule
+
+# Convenience name for target.
+test: src/CMakeFiles/test.dir/rule
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	cd /home/adcm2/raidam/coupling/work/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/test.dir/build.make src/CMakeFiles/test.dir/build
+.PHONY : test/fast
+
 matrix_read.o: matrix_read.cpp.o
 .PHONY : matrix_read.o
 
@@ -199,6 +213,30 @@ matrix_read.cpp.s:
 	cd /home/adcm2/raidam/coupling/work/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/matrix_read.dir/build.make src/CMakeFiles/matrix_read.dir/matrix_read.cpp.s
 .PHONY : matrix_read.cpp.s
 
+test.o: test.cpp.o
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	cd /home/adcm2/raidam/coupling/work/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/test.dir/build.make src/CMakeFiles/test.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	cd /home/adcm2/raidam/coupling/work/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/test.dir/build.make src/CMakeFiles/test.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	cd /home/adcm2/raidam/coupling/work/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/test.dir/build.make src/CMakeFiles/test.dir/test.cpp.s
+.PHONY : test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,9 +250,13 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... matrix_read"
+	@echo "... test"
 	@echo "... matrix_read.o"
 	@echo "... matrix_read.i"
 	@echo "... matrix_read.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

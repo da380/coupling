@@ -27,6 +27,7 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/x86_64-linux-gnu/bits/mathinline.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/std_abs.h /usr/include/stdlib.h \
  /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
@@ -54,7 +55,9 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
- /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/specfun.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_algobase.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/functexcept.h \
@@ -173,6 +176,7 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/_G_config.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/cerrno /usr/include/errno.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
@@ -262,7 +266,6 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/Meta.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/cstdint \
  /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/Assert.h \
- /opt/gcc-13.1.0/include/c++/13.1.0/cassert /usr/include/assert.h \
  /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/ForwardDeclarations.h \
  /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/StaticAssert.h \
  /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/XprHelper.h \
@@ -577,6 +580,7 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /opt/gcc-13.1.0/include/c++/13.1.0/bits/ranges_uninitialized.h \
  /opt/gcc-13.1.0/include/c++/13.1.0/pstl/glue_memory_defs.h \
  /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Wisdom.h \
+ /opt/gcc-13.1.0/include/c++/13.1.0/cassert /usr/include/assert.h \
  /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Flags.h \
  /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Concepts.h \
  /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Views.h \
@@ -586,4 +590,5 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: \
  /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Flags.h \
  /home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src/FFTWpp/src/Eigen.h \
  /home/adcm2/raidam/coupling/work/src/BlockPreconditioner.h \
+ /home/adcm2/raidam/coupling/work/src/blockindex.h \
  /home/adcm2/raidam/coupling/work/src/filter_header.h

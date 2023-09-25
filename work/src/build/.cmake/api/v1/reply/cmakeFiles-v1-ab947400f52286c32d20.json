@@ -140,6 +140,26 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/opt/cmake-3.26.4/share/cmake-3.26/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/cmake-3.26.4/share/cmake-3.26/Modules/FindOpenMP.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/cmake-3.26.4/share/cmake-3.26/Modules/CMakeParseImplicitLinkInfo.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/cmake-3.26.4/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/opt/cmake-3.26.4/share/cmake-3.26/Modules/FindPackageMessage.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",

@@ -5231,6 +5231,19 @@ matrix_read/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/matrix_read.dir/build.make src/CMakeFiles/matrix_read.dir/build
 .PHONY : matrix_read/fast
 
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/test.dir/build.make src/CMakeFiles/test.dir/build
+.PHONY : test/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -5625,6 +5638,7 @@ help:
 	@echo "... matrixfree_cg"
 	@echo "... nullary_indexing"
 	@echo "... random_cpp11"
+	@echo "... test"
 	@echo "... tut_arithmetic_add_sub"
 	@echo "... tut_arithmetic_dot_cross"
 	@echo "... tut_arithmetic_matrix_mul"

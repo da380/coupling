@@ -129,6 +129,19 @@ matrix_read/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_read.dir/build.make CMakeFiles/matrix_read.dir/build
 .PHONY : matrix_read/fast
 
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
 # target to build an object file
 matrix_read.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_read.dir/build.make CMakeFiles/matrix_read.dir/matrix_read.o
@@ -144,6 +157,21 @@ matrix_read.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_read.dir/build.make CMakeFiles/matrix_read.dir/matrix_read.s
 .PHONY : matrix_read.s
 
+# target to build an object file
+test.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.o
+.PHONY : test.o
+
+# target to preprocess a source file
+test.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.i
+.PHONY : test.i
+
+# target to generate assembly for a file
+test.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.s
+.PHONY : test.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -153,9 +181,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... matrix_read"
+	@echo "... test"
 	@echo "... matrix_read.o"
 	@echo "... matrix_read.i"
 	@echo "... matrix_read.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

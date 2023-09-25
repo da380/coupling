@@ -17,6 +17,7 @@
 #include <vector>
 
 #include "BlockPreconditioner.h"
+#include "blockindex.h"
 #include "filter_header.h"
 
 class modespectra {
@@ -133,7 +134,7 @@ modespectra::modespectra(std::string filepath, std::string filePath2,
     i12 = std::max(static_cast<int>(floor(this->f1 / df2)), 1);
     i22 = static_cast<int>(floor(this->f2 / df2)) + 1;
 
-    std::cout << "nt: " << nt << ", nt0: " << nt0 << std::endl;
+    // std::cout << "nt: " << nt << ", nt0: " << nt0 << std::endl;
     //////////////////////////////////////////////////////////////////////////
     ///////////////      file opening and initialisation       ///////////////
     //////////////////////////////////////////////////////////////////////////
@@ -148,12 +149,12 @@ modespectra::modespectra(std::string filepath, std::string filePath2,
     // find the length of the file
     infile.seekg(0, ios::end);
     int file_size = infile.tellg();
-    cout << "Size of the file is " << file_size << " bytes" << endl;
+    // cout << "Size of the file is " << file_size << " bytes" << endl;
     infile.seekg(0, infile.beg);   // reset back to beginning
 
     // finding number of elements
     nelem = sqrt((file_size - 24) / (3 * 16));
-    cout << nelem << endl;
+    // cout << nelem << endl;
 
     // placeholder byte size 4, ie same as integer
     int i, matbytes;
@@ -199,7 +200,7 @@ modespectra::modespectra(std::string filepath, std::string filePath2,
     // find the length of the file
     vecfile.seekg(0, ios::end);
     int file_size2 = vecfile.tellg();
-    cout << "Size of the file is " << file_size2 << " bytes" << endl;
+    // cout << "Size of the file is " << file_size2 << " bytes" << endl;
     vecfile.seekg(0, vecfile.beg);   // reset back to beginning
 
     // finding number of elements
@@ -247,7 +248,7 @@ modespectra::modespectra(std::string filepath, std::string filePath2,
     // find the length of the file
     freqfile.seekg(0, ios::end);
     int file_size3 = freqfile.tellg();
-    cout << "Size of the file is " << file_size3 << " bytes" << endl;
+    // cout << "Size of the file is " << file_size3 << " bytes" << endl;
     freqfile.seekg(0, freqfile.beg);   // reset back to beginning
 
     // finding number of elements
@@ -268,7 +269,14 @@ modespectra::modespectra(std::string filepath, std::string filePath2,
     freqfile.read(reinterpret_cast<char *>(&i), sizeof(i));   // placeholder
     freqfile.read(reinterpret_cast<char *>(&i), sizeof(i));   // placeholder
     freqfile.read(reinterpret_cast<char *>(ll.data()), 4 * mtot);
-
+    // std::cout << "Hello: " << mtot << std::endl;
+    // std::cout << ww(0) << std::endl;
+    // std::cout << ww(1) << std::endl;
+    // std::cout << ww(2) << std::endl;
+    // std::cout << ll(0) << std::endl;
+    // std::cout << ll(1) << std::endl;
+    // std::cout << ll(2) << std::endl;
+    // std::cout << this->wtb << std::endl;
     //////////////////////////////////////////////////////////////////////////
     ///////////////   closing and checking closed correctly    ///////////////
     //////////////////////////////////////////////////////////////////////////
@@ -300,9 +308,18 @@ modespectra::finv(std::complex<double> winp) {
         Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>,
         Eigen::BlockPreconditioner<std::complex<double> > >
         solver;
+    // Eigen::BiCGSTAB<
+    //     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>,
+    //     Eigen::DiagonalPreconditioner<std::complex<double> > >
+    //     solver;
+    // indices
+    std::vector<int> vecidx;
+    vecidx = randomfunctions::findindex(winp.real(), wtb, ll, ww.real());
 
     solver.setTolerance(1.0 * std::pow(10, -5));
     solver.compute(A);
+    solver.preconditioner().setblock(A, vecidx[0], vecidx[1]);
+    // solver.preconditioner().setblock(A, 0, 0);
 
     // solution and rhs
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> x, vrhs, x0;
@@ -312,13 +329,19 @@ modespectra::finv(std::complex<double> winp) {
     // find rhs
     for (int idx = 0; idx < nelem; ++idx) {
         vrhs(idx) = vs(idx) / (myi * winp);
-        x0(idx) = vrhs(idx) / A(idx, idx);
+        // x0(idx) = vrhs(idx) / A(idx, idx);
     }
+    // Eigen::BlockPreconditioner<std::complex<double> > incond;
+    // incond.compute(A);
+    // incond.setblock(A, vecidx[0], vecidx[1]);
+    // x0 = incond.solve(vrhs);
 
     // solve and return
-    // x = solver.solve(vrhs);
-    x = solver.solveWithGuess(vrhs, x0);
+    x = solver.solve(vrhs);
+    // x = solver.solveWithGuess(vrhs, x0);
     if (solver.iterations() > 3) {
+        std::cout << "Frequency: " << winp.real() << ". Index:" << vecidx[0]
+                  << ", " << vecidx[1] << std::endl;
         std::cout << "#iterations:     " << solver.iterations() << std::endl;
     }
     return x;
@@ -336,7 +359,7 @@ modespectra::rawspectra() {
 
     // go through frequencies:
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> vlhs;
-// #pragma omp parallel for
+    // #pragma omp parallel for
     for (int idx = 0; idx < nt / 2 + 1; ++idx) {
         tmp(0, idx) = w[idx] * oneovertwopi;   // frequency
         // std::complex<double> winp;             // imaginary shifted frequency

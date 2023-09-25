@@ -4,5 +4,11 @@
   "command": "/usr/bin/g++   -g -fopenmp -o CMakeFiles/matrix_read.dir/matrix_read.o -c /raid/adcm2/coupling/work/src/matrix_read.cpp",
   "file": "/raid/adcm2/coupling/work/src/matrix_read.cpp",
   "output": "CMakeFiles/matrix_read.dir/matrix_read.o"
+},
+{
+  "directory": "/raid/adcm2/coupling/work/src/build",
+  "command": "/usr/bin/g++   -g -fopenmp -o CMakeFiles/test.dir/test.o -c /raid/adcm2/coupling/work/src/test.cpp",
+  "file": "/raid/adcm2/coupling/work/src/test.cpp",
+  "output": "CMakeFiles/test.dir/test.o"
 }
 ]

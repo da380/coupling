@@ -128,18 +128,19 @@ class BlockPreconditioner {
         if (lenidx > 1) {
             // std::cout << "Hello again\n";
             m_val.resize(lenidx, lenidx);
-            for (int j = 0; j < lenidx; ++j) {
-                int k = 0;
-                typename MatType::InnerIterator it(mat, minidx + j);
-                while (it && it.index() != minidx - 1) ++it;
-                while (it && it.index() != maxidx) {
-                    ++it;
-                    m_val(j, k) = it.value();
-                    ++k;
-                }
-            }
+            // for (int j = 0; j < lenidx; ++j) {
+            //     int k = 0;
+            //     typename MatType::InnerIterator it(mat, minidx + j);
+            //     while (it && it.index() != minidx - 1) ++it;
+            //     while (it && it.index() != maxidx) {
+            //         ++it;
+            //         m_val(j, k) = it.value();
+            //         ++k;
+            //     }
+            // }
 
-            // m_val = mat.block(minidx, minidx, lenidx, lenidx);
+            m_val = mat.block(minidx, minidx, lenidx, lenidx);
+            // std::cout << m_tmp - m_val << std::endl;
             lusolve.compute(m_val);
             m_isBlockInitialized = true;
         }
