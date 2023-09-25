@@ -336,7 +336,7 @@ modespectra::rawspectra() {
 
     // go through frequencies:
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> vlhs;
-#pragma omp parallel for
+// #pragma omp parallel for
     for (int idx = 0; idx < nt / 2 + 1; ++idx) {
         tmp(0, idx) = w[idx] * oneovertwopi;   // frequency
         // std::complex<double> winp;             // imaginary shifted frequency
