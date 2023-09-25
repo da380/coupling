@@ -32,7 +32,6 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
   /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
-  /usr/include/x86_64-linux-gnu/bits/mathinline.h \
   /opt/gcc-13.1.0/include/c++/13.1.0/bits/std_abs.h \
   /usr/include/stdlib.h \
   /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/stddef.h \
@@ -63,7 +62,6 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /opt/gcc-13.1.0/include/c++/13.1.0/bits/specfun.h \
   /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_algobase.h \
@@ -189,7 +187,6 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
   /usr/include/x86_64-linux-gnu/bits/_G_config.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
   /opt/gcc-13.1.0/include/c++/13.1.0/cerrno \
   /usr/include/errno.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
@@ -289,6 +286,8 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
   /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/Meta.h \
   /opt/gcc-13.1.0/include/c++/13.1.0/cstdint \
   /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/Assert.h \
+  /opt/gcc-13.1.0/include/c++/13.1.0/cassert \
+  /usr/include/assert.h \
   /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/ForwardDeclarations.h \
   /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/StaticAssert.h \
   /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/XprHelper.h \
@@ -604,8 +603,6 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
   /opt/gcc-13.1.0/include/c++/13.1.0/bits/ranges_uninitialized.h \
   /opt/gcc-13.1.0/include/c++/13.1.0/pstl/glue_memory_defs.h \
   _deps/fftwpp-src/FFTWpp/src/Wisdom.h \
-  /opt/gcc-13.1.0/include/c++/13.1.0/cassert \
-  /usr/include/assert.h \
   _deps/fftwpp-src/FFTWpp/src/Flags.h \
   _deps/fftwpp-src/FFTWpp/src/Concepts.h \
   _deps/fftwpp-src/FFTWpp/src/Views.h \
@@ -622,10 +619,6 @@ src/CMakeFiles/matrix_read.dir/matrix_read.cpp.o: /home/adcm2/raidam/coupling/wo
 _deps/fftwpp-src/FFTWpp/src/Views.h:
 
 _deps/fftwpp-src/FFTWpp/src/Flags.h:
-
-/usr/include/assert.h:
-
-/opt/gcc-13.1.0/include/c++/13.1.0/cassert:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/pstl/glue_memory_defs.h:
 
@@ -650,6 +643,8 @@ _deps/fftwpp-src/FFTWpp/src/Concepts.h:
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Eigenvalues/HessenbergDecomposition.h:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Eigenvalues/InternalHeaderCheck.h:
+
+/home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/Eigenvalues:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Geometry/arch/Geometry_SIMD.h:
 
@@ -927,6 +922,12 @@ _deps/fftwpp-src/FFTWpp/src/Concepts.h:
 
 /usr/include/locale.h:
 
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/memory_resource.h:
+
+/usr/include/fftw3.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/range_access.h:
+
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/stl_tree.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/char_traits.h:
@@ -1023,21 +1024,19 @@ _deps/fftwpp-src/FFTWpp/All:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/Memory.h:
 
-/opt/gcc-13.1.0/include/c++/13.1.0/tr1/legendre_function.tcc:
+_deps/fftwpp-src/FFTWpp/src/Eigen.h:
 
-/opt/gcc-13.1.0/include/c++/13.1.0/bits/move.h:
+/usr/include/asm-generic/errno-base.h:
 
-/opt/gcc-13.1.0/include/c++/13.1.0/bits/cxxabi_init_exception.h:
+/home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/CwiseUnaryOp.h:
 
-/opt/gcc-13.1.0/include/c++/13.1.0/bits/ranges_algobase.h:
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
-/opt/gcc-13.1.0/include/c++/13.1.0/tr1/hypergeometric.tcc:
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/uses_allocator.h:
 
-/usr/include/x86_64-linux-gnu/bits/_G_config.h:
+/opt/gcc-13.1.0/include/c++/13.1.0/tr1/bessel_function.tcc:
 
-/opt/gcc-13.1.0/include/c++/13.1.0/limits:
-
-/opt/gcc-13.1.0/include/c++/13.1.0/debug/assertions.h:
+/opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/syslimits.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/locale_classes.tcc:
 
@@ -1069,6 +1068,10 @@ _deps/fftwpp-src/FFTWpp/src/Wisdom.h:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
+/opt/gcc-13.1.0/include/c++/13.1.0/tr1/legendre_function.tcc:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/move.h:
+
 /opt/gcc-13.1.0/include/c++/13.1.0/typeinfo:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/plugins/IndexedViewMethods.inc:
@@ -1092,6 +1095,16 @@ _deps/fftwpp-src/FFTWpp/src/Wisdom.h:
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/AssignEvaluator.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/atomic:
+
+/usr/include/x86_64-linux-gnu/bits/_G_config.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/limits:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/debug/assertions.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/ranges_algobase.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/tr1/hypergeometric.tcc:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/tr1/modified_bessel_func.tcc:
 
@@ -1161,22 +1174,6 @@ _deps/fftwpp-src/FFTWpp/src/Wisdom.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
-_deps/fftwpp-src/FFTWpp/src/Eigen.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/CwiseUnaryOp.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/opt/gcc-13.1.0/include/c++/13.1.0/bits/uses_allocator.h:
-
-/opt/gcc-13.1.0/include/c++/13.1.0/tr1/bessel_function.tcc:
-
-/opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/syslimits.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathinline.h:
-
 /opt/gcc-13.1.0/include/c++/13.1.0/format:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
@@ -1229,10 +1226,6 @@ _deps/fftwpp-src/FFTWpp/src/Eigen.h:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/Replicate.h:
 
-/home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/Eigenvalues:
-
-/usr/include/x86_64-linux-gnu/bits/stdio.h:
-
 /opt/gcc-13.1.0/include/c++/13.1.0/cctype:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/x86_64-pc-linux-gnu/bits/os_defines.h:
@@ -1245,9 +1238,9 @@ _deps/fftwpp-src/FFTWpp/src/Eigen.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
 /opt/gcc-13.1.0/lib/gcc/x86_64-pc-linux-gnu/13.1.0/include/mm_malloc.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
@@ -1317,12 +1310,6 @@ _deps/fftwpp-src/FFTWpp/src/Eigen.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/usr/include/fftw3.h:
-
-/opt/gcc-13.1.0/include/c++/13.1.0/bits/range_access.h:
-
-/opt/gcc-13.1.0/include/c++/13.1.0/bits/memory_resource.h:
-
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
@@ -1336,8 +1323,6 @@ _deps/fftwpp-src/FFTWpp/src/Eigen.h:
 /opt/gcc-13.1.0/include/c++/13.1.0/x86_64-pc-linux-gnu/bits/c++allocator.h:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/Solve.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/basic_ios.h:
 
@@ -1385,6 +1370,8 @@ _deps/fftwpp-src/FFTWpp/src/Eigen.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/vector.tcc:
 
+/opt/gcc-13.1.0/include/c++/13.1.0/cstddef:
+
 /opt/gcc-13.1.0/include/c++/13.1.0/ctime:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/SolveTriangular.h:
@@ -1397,7 +1384,7 @@ _deps/fftwpp-src/FFTWpp/src/Eigen.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/bit:
 
-/opt/gcc-13.1.0/include/c++/13.1.0/cstddef:
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/cxxabi_init_exception.h:
 
 /opt/gcc-13.1.0/include/c++/13.1.0/bits/basic_ios.tcc:
 
@@ -1611,6 +1598,10 @@ _deps/fftwpp-src/FFTWpp/src/Memory.h:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/functors/AssignmentFunctors.h:
 
+/opt/gcc-13.1.0/include/c++/13.1.0/cassert:
+
+/usr/include/assert.h:
+
 /opt/gcc-13.1.0/include/c++/13.1.0/x86_64-pc-linux-gnu/bits/cpu_defines.h:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/ForwardDeclarations.h:
@@ -1769,12 +1760,6 @@ _deps/fftwpp-src/FFTWpp/src/Plan.h:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/PartialReduxEvaluator.h:
 
-/home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/ReenableStupidWarnings.h:
-
-/opt/gcc-13.1.0/include/c++/13.1.0/bits/iterator_concepts.h:
-
-/home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/products/SelfadjointMatrixVector.h:
-
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/products/SelfadjointMatrixMatrix.h:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Cholesky/LDLT.h:
@@ -1800,3 +1785,9 @@ _deps/fftwpp-src/FFTWpp/src/Plan.h:
 /opt/gcc-13.1.0/include/c++/13.1.0/stdlib.h:
 
 /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/Reverse.h:
+
+/opt/gcc-13.1.0/include/c++/13.1.0/bits/iterator_concepts.h:
+
+/home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/products/SelfadjointMatrixVector.h:
+
+/home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src/Eigen/src/Core/util/ReenableStupidWarnings.h:

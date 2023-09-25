@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/adcm2/raidam/coupling/work/build/_deps/fftwpp-src -isystem /home/adcm2/Documents/cppsimplecodes/testprograms/build/_deps/eigen3-src
 
-CXX_FLAGS = -O3 -DNDEBUG -std=gnu++20 -fopenmp
+CXX_FLAGS = -g -std=gnu++20 -fopenmp
 

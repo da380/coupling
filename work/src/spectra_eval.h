@@ -16,6 +16,7 @@
 #include <string>
 #include <vector>
 
+#include "BlockPreconditioner.h"
 #include "filter_header.h"
 
 class modespectra {
@@ -297,9 +298,9 @@ modespectra::finv(std::complex<double> winp) {
     // declare solver, using diagonal preconditioner for moment
     Eigen::BiCGSTAB<
         Eigen::Matrix<std::complex<double>, Eigen::Dynamic, Eigen::Dynamic>,
-        Eigen::DiagonalPreconditioner<std::complex<double> > >
+        Eigen::BlockPreconditioner<std::complex<double> > >
         solver;
-        
+
     solver.setTolerance(1.0 * std::pow(10, -5));
     solver.compute(A);
 
@@ -311,14 +312,15 @@ modespectra::finv(std::complex<double> winp) {
     // find rhs
     for (int idx = 0; idx < nelem; ++idx) {
         vrhs(idx) = vs(idx) / (myi * winp);
-        x0(idx) = vrhs(idx)/A(idx,idx);
+        x0(idx) = vrhs(idx) / A(idx, idx);
     }
 
     // solve and return
     // x = solver.solve(vrhs);
-    x = solver.solveWithGuess(vrhs,x0);
-    if (solver.iterations()>3){
-    std::cout << "#iterations:     " << solver.iterations() << std::endl;}
+    x = solver.solveWithGuess(vrhs, x0);
+    if (solver.iterations() > 3) {
+        std::cout << "#iterations:     " << solver.iterations() << std::endl;
+    }
     return x;
 };
 
@@ -334,20 +336,21 @@ modespectra::rawspectra() {
 
     // go through frequencies:
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> vlhs;
-    // #pragma omp parallel for
+#pragma omp parallel for
     for (int idx = 0; idx < nt / 2 + 1; ++idx) {
         tmp(0, idx) = w[idx] * oneovertwopi;   // frequency
-        std::complex<double> winp;             // imaginary shifted frequency
-        winp = w[idx] - myi * imep;
+        // std::complex<double> winp;             // imaginary shifted frequency
+        // winp = w[idx] - myi * imep;
 
         // run through all frequencies and if between f1 and f2 compute
         if (idx > i1 - 1 && idx < i2 + 1) {
             // calculate x in Ax = b
-            vlhs = modespectra::finv(winp);
+            vlhs = modespectra::finv(w[idx] - myi * imep);
 
             // find acceleration response using receiver vectors
-            tmp.block(1, idx, nelem2, 1) =
-                -winp * winp * this->vr.transpose() * vlhs;
+            tmp.block(1, idx, nelem2, 1) = -(w[idx] - myi * imep) *
+                                           (w[idx] - myi * imep) *
+                                           this->vr.transpose() * vlhs;
         };
     };
     return tmp;
@@ -371,7 +374,9 @@ modespectra::postprocess(Eigen::Matrix<std::complex<double>, 1, Eigen::Dynamic>
     // Form the plans.
     auto flag = FFTWpp::Measure | FFTWpp::Estimate;
 
-    auto backward_plan = FFTWpp::MakePlan1D(outFL, checkFL, flag);
+    auto outview = FFTWpp::MakeDataView1D(outFL);
+    auto outview2 = FFTWpp::MakeDataView1D(checkFL);
+    auto backward_plan = FFTWpp::Plan(outview, outview2, flag);
     Eigen::Matrix<std::complex<double>, Eigen::Dynamic, 1> tmpspec;
     Eigen::Matrix<double, 1, Eigen::Dynamic> vecout;
 
