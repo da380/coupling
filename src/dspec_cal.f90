@@ -127,10 +127,14 @@ program dspec_cal
   read(io1) a1
   read(io1) a2
   close(io1)
+  print *, a0(1:2,1:2)
+  print *, a0(1:2,1:2)
+  print *, a0(1:2,1:2)
+  print *, "hello"
 
   
   ! open the mode catalog
-  call openfl(7,'/home/da380/raid/coupling_standalone/data/SPRM1.BIN', & 
+  call openfl(7,'../data/SPRM1.BIN', & 
        1 ,0,0,istat,4096)
 
   ! set up mode catalog
@@ -183,6 +187,22 @@ program dspec_cal
   end do
   ! end loop over the modes
 
+! outputting vectors
+  open(25, file = "vector_sr.bin", form = "unformatted")
+  write(25) vs
+  write(25) vr
+  close(25)
+  open(55, file = "freq_sph.bin", form = "unformatted")
+  write(55) ww
+  write(55) ll
+  close(55)
+!   open(25, file = "vector_sr.out", status = "replace", form = "formatted")
+!   write(25) vs
+!   write(25) vr
+!   close(25)
+!   print *, vs(1:2)
+!   print *, vr(1:2,1)
+
 
   f1 = (i1-1)*df
   f2 = (i2-1)*df
@@ -206,7 +226,7 @@ program dspec_cal
   saved = 0
 
 
-  ! switch whether to use the use the corilis approximation
+  ! switch whether to use the use the coriolis approximation
   ifcor = 0
 
 

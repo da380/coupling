@@ -55,13 +55,19 @@ c=====================================================================c
 !     1         //'|')
 
 
-      call chekcl('|-lu2:o:1:[/home/da380/raid/coupling_standalone/data/foanis05.222]'                    
+!       call chekcl('|-lu2:o:1:[/home/alex/Documents/c++/coupling/data/foanis05.222]'                    
+!      1     //'|-lu7:o:1:[mdcpl.out]'                                                                       
+!      1     //'|-lu3:o:1:[/home/alex/Documents/c++/coupling/data/m1084x2.htm] model on unit 3 (rdmdl)'  
+!      1     //'|-model:o:1:[/home/alex/Documents/c++/coupling/data/S20RTS.sph] Model'                   
+!      1     //'|-pc:o:1:[default.pc] startup plotting commands'                                           
+!      1     //'|')
+ 
+      call chekcl('|-lu2:o:1:[../data/foanis05.222]'                    
      1     //'|-lu7:o:1:[mdcpl.out]'                                                                       
-     1     //'|-lu3:o:1:[/home/da380/raid/coupling_standalone/data/m1084x2.htm] model on unit 3 (rdmdl)'  
-     1     //'|-model:o:1:[/home/da380/raid/coupling_standalone/data/S20RTS.sph] Model'                   
+     1     //'|-lu3:o:1:[../data/m1084x2.htm] model on unit 3 (rdmdl)'  
+     1     //'|-model:o:1:[../data/S20RTS.sph] Model'                   
      1     //'|-pc:o:1:[default.pc] startup plotting commands'                                           
      1     //'|')
-
 
 
 c     this opens the PREM model file default foanis05.222
@@ -78,7 +84,7 @@ c     this opens the outout file mdcpl.out
 
 
 c     open the PREM catelog
-      call openfl(1,'/home/da380/raid/coupling_standalone/data/PREM222.BIN',1,0,0,
+      call openfl(1,'../data/PREM222.BIN',1,0,0,
      1     istat,5364)
 !      call openfl(1,'/home/eeyore1/john/dta/PREM.BIN',1,0,0,
 !     1    istat,5364)
